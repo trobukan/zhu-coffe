@@ -1,5 +1,6 @@
 .card-container {
   display: flex;
+  justify-content: center;
   gap: 40px;
 }
 
@@ -8,12 +9,11 @@
   border-radius: 1.5rem;
   width: 250px;
   height: 400px;
-  transform: translate();
 }
 
 .card > .card__image {
   position: absolute;
-  right: 48%;
+  right: 50%;
   transform: translate(-50%, -50%);
 }
 
