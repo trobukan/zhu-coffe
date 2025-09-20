@@ -1,0 +1,36 @@
+.card-container {
+  display: flex;
+  gap: 40px;
+}
+
+.card {
+  background-color: lightgray;
+  border-radius: 1.5rem;
+  width: 250px;
+  height: 400px;
+  transform: translate();
+}
+
+.card > .card__image {
+  position: absolute;
+  right: 48%;
+  transform: translate(-50%, -50%);
+}
+
+.card:not(.card--selected) > .card__image {
+  width: 50%;
+  position: absolute;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  opacity: 80%;
+}
+
+.card--selected {
+  background-color: var(--primary-color);
+  width: 300px;
+  height: 450px;
+}
+
+.card:not(.card--selected) {
+  transform: translate(0, 5%);
+}
