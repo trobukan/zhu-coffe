@@ -1,6 +1,7 @@
-.main-content-wrapper {
+.main-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 6.25rem;
+  flex: 1;
 }
