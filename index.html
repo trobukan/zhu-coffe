@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Zhu Coffe</title>
     <link rel="stylesheet" href="src/styles/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="data:," />
   </head>
 
   <body>
@@ -33,21 +34,89 @@
     <main class="main-container">
       <div class="card-container">
         <div class="card light-shadow">
-          <img class="card__image" src="src/assets/coffe.svg" alt="" />
-        </div>
-        <div class="card card--selected light-shadow">
-          <img class="card__image" src="src/assets/coffe.svg" alt="" />
-        </div>
-        <div class="card light-shadow">
-          <img class="card__image" src="src/assets/coffe.svg" alt="" />
+          <div class="card__image-box">
+            <img src="src/assets/coffe.svg" alt="" />
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">Card Title</h2>
+          </div>
         </div>
 
+        <div class="card card--selected light-shadow">
+          <div class="card__image-box">
+            <img src="src/assets/coffe.svg" alt="" />
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">Card Title</h2>
+            <a class="card__btn" href="">Ver mais</a>
+          </div>
+        </div>
         <div class="card light-shadow">
-          <img class="card__image" src="src/assets/coffe.svg" alt="" />
+          <div class="card__image-box">
+            <img src="src/assets/coffe.svg" alt="" />
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">Card Title</h2>
+          </div>
+        </div>
+        <div class="card light-shadow">
+          <div class="card__image-box">
+            <img src="src/assets/coffe.svg" alt="" />
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">Card Title</h2>
+          </div>
         </div>
       </div>
+      <section class="chooseus-section">
+        <h2 class="chooseus__title" style="grid-area: chooseus-title">
+          Por que nos escolher?
+        </h2>
+        <p class="chooseus__text" style="grid-area: chooseus-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <img
+          class="chooseus__image"
+          style="grid-area: chooseus-image"
+          src=""
+          alt=""
+        />
+      </section>
     </main>
-
-    <footer class="footer-container light-shadow"></footer>
+    <footer class="footer-container light-shadow">
+      <div class="footer__content">
+        <div class="footer__row">
+          <h4 class="footer__title">Produtos</h4>
+          <ul class="footer__list">
+            <li><a href="">Café Expresso</a></li>
+            <li><a href="">Café Latte</a></li>
+            <li><a href="">Cappucino</a></li>
+            <li><a href="">Mocha</a></li>
+          </ul>
+        </div>
+        <div class="footer__row">
+          <h4 class="footer__title">Empresa</h4>
+          <ul class="footer__list">
+            <li><a href="">Sobre Nós</a></li>
+            <li><a href="">Contatos</a></li>
+            <li><a href="">Suporte</a></li>
+          </ul>
+        </div>
+        <div class="footer_row">
+          <h4 class="footer__title">Redes Sociais</h4>
+          <ul class="footer__list">
+            <li><a href="">Default </a></li>
+            <li><a href="">Default</a></li>
+            <li><a href="">Default</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
