@@ -1,9 +1,30 @@
 .header-container {
-  width: 100%;
-  background-image: url("../../assets/header.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 150px;
+  margin-top: 24px;
+}
+
+.header__background {
+  background-color: var(--primary-color);
   height: 400px;
-  margin-bottom: 200px;
+  width: 100%;
+}
+
+.header__logo {
+  position: absolute;
+  width: 5%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  bottom: 0;
+}
+
+.big-down-circle {
+  position: absolute;
+  transform: translateY(90%);
+  width: 15%;
+  bottom: 0;
 }
