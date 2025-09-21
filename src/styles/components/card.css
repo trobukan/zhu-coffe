@@ -48,9 +48,12 @@
   margin-top: 1.5rem;
 }
 /* > Coffe SVG */
-.card .card__image {
-  width: 50%;
-  max-width: 40%;
+.card__image-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(50%, -50%);
+  width: 20%;
   opacity: 80%;
 }
 .card--selected .card__image {
