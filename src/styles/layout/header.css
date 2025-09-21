@@ -1,9 +1,19 @@
 .header-container {
+  display: flex;
+  position: relative;
+  margin-bottom: 190px;
+}
+
+.header__background {
   width: 100%;
-  background-image: url("../../assets/header.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 400px;
-  margin-bottom: 200px;
+}
+
+.header__logo {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 20px;
+  width: 20%;
+  max-width: 80px;
+  object-fit: contain;
 }
