@@ -28,51 +28,57 @@
       <ul>
         <li>Inicio</li>
         <li>Menu</li>
-        <li><a href="https://wa.me/5521978724730" target="_blank" style="text-decoration: none; color: inherit;"> Contato</a><li>
+        <li>
+          <a
+            href="https://wa.me/5521978724730"
+            target="_blank"
+            style="text-decoration: none; color: inherit"
+          >
+            Contato</a
+          >
+        </li>
       </ul>
     </nav>
     <main class="main-container">
       <div class="card-container">
         <div class="card light-shadow">
-          <div class="card__image-box">
-            <img src="src/assets/coffe.svg" alt="" />
-          </div>
+          <img class="card__image" src="src/assets/coffe.svg" alt="" />
           <div class="card__content">
-            <h2 class="card__title">Card Title</h2>
+            <h2 class="card__title">Cappucinno</h2>
+            <p class="card__price">R$ 15,00</p>
+            <a class="card__btn" href="">Ver mais</a>
           </div>
         </div>
-
         <div class="card card--selected light-shadow">
-          <div class="card__image-box">
-            <img src="src/assets/coffe.svg" alt="" />
-          </div>
+          <img class="card__image" src="src/assets/coffe.svg" alt="" />
           <div class="card__content">
-            <h2 class="card__title">Card Title</h2>
+            <h2 class="card__title">Latte</h2>
+            <p class="card__price">R$ 15,00</p>
             <a class="card__btn" href="">Ver mais</a>
           </div>
         </div>
         <div class="card light-shadow">
-          <div class="card__image-box">
-            <img src="src/assets/coffe.svg" alt="" />
-          </div>
+          <img class="card__image" src="src/assets/coffe.svg" alt="" />
           <div class="card__content">
-            <h2 class="card__title">Card Title</h2>
+            <h2 class="card__title">Mocha</h2>
+            <p class="card__price">R$ 15,00</p>
+            <a class="card__btn" href="">Ver mais</a>
           </div>
         </div>
         <div class="card light-shadow">
-          <div class="card__image-box">
-            <img src="src/assets/coffe.svg" alt="" />
-          </div>
+          <img class="card__image" src="src/assets/coffe.svg" alt="" />
           <div class="card__content">
-            <h2 class="card__title">Card Title</h2>
+            <h2 class="card__title">Expresso</h2>
+            <p class="card__price">R$ 15,00</p>
+            <a class="card__btn" href="">Ver mais</a>
           </div>
         </div>
       </div>
       <section class="chooseus-section">
-        <h2 class="chooseus__title" style="grid-area: chooseus-title">
+        <h2 class="chooseus__title" style="grid-area: title">
           Por que nos escolher?
         </h2>
-        <p class="chooseus__text" style="grid-area: chooseus-text">
+        <p class="chooseus__text" style="grid-area: text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -81,12 +87,36 @@
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <img
-          class="chooseus__image"
-          style="grid-area: chooseus-image"
-          src=""
-          alt=""
-        />
+        <img class="chooseus__image" style="grid-area: image" src="" alt="" />
+      </section>
+      <section class="findus-section">
+        <h2 class="findus__title" style="grid-area: title">
+          Onde nos encontrar?
+        </h2>
+        <div class="findus__info" style="grid-area: info">
+          <p class="findus__address" style="grid-area: address">
+            Av. Pastor Martin Luther King Jr., 6475<br />
+            Rio de Janeiro - RJ
+          </p>
+          <p class="findus__hours" style="grid-area: hours">
+            Segunda a Sexta: 8h às 18h<br />
+            Sábado: 9h às 14h<br />
+            Domingo: Fechado
+          </p>
+          <p class="findus__contact" style="grid-area: contact">
+            Telefone: (21) 97872-4730<br />
+            E-mail: contato@zhucoffe.com.br
+          </p>
+        </div>
+        <div class="findus__map" style="grid-area: map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1838.3354789203422!2d-43.31996290556924!3d-22.851660078465546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997cbb82e26d49%3A0x48d8a33ccaea3112!2sSESI%20%2F%20SENAI%20Vicente%20de%20Carvalho!5e0!3m2!1spt-BR!2sbr!4v1758495451014!5m2!1spt-BR!2sbr"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </section>
     </main>
     <footer class="footer-container light-shadow">
@@ -94,8 +124,8 @@
         <div class="footer__row">
           <h4 class="footer__title">Produtos</h4>
           <ul class="footer__list">
-            <li><a href="">Café Expresso</a></li>
-            <li><a href="">Café Latte</a></li>
+            <li><a href="">Expresso</a></li>
+            <li><a href="">Latte</a></li>
             <li><a href="">Cappucino</a></li>
             <li><a href="">Mocha</a></li>
           </ul>
