@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -15,29 +15,34 @@
     />
     <link rel="icon" href="data:," />
   </head>
-
   <body>
-    <header class="header-container">
-      <div class="header__background"></div>
+    <header class="rel flex flex:col js:center ai:center mb:150px">
+      <div class="bg:$(primary-color) h:400px w:100%"></div>
       <img
-        class="big-down-circle"
+        class="abs w:15% bottom:0 translateY(90%)"
         src="src/assets/big-down-circle.svg"
         alt=""
       />
-      <img class="header__logo" src="src/assets/logo.svg" alt="" />
+      <img
+        class="abs w:5% left:50% bottom:0 translate(-50%,20%)"
+        src="src/assets/logo.svg"
+        alt=""
+      />
     </header>
-    <nav class="nav-container light-shadow">
-      <ul>
+    <nav class="abs top:0 left:0 bg:white w:100% p:0.5rem|1rem light-shadow">
+      <ul
+        class="flex ai:center m:0 gap:20px list-style:none cursor:pointer color:black"
+      >
         <li>Inicio</li>
         <li>Menu</li>
         <li>
           <a
+            class="text-decoration:none color:inherit"
             href="https://wa.me/5521978724730"
             target="_blank"
-            style="text-decoration: none; color: inherit"
           >
-            Contato</a
-          >
+            Contato
+          </a>
         </li>
       </ul>
     </nav>
