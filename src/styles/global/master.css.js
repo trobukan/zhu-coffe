@@ -13,7 +13,7 @@ window.masterCSSConfig = {
   },
   components: {
     // > Card
-    "card-coffe": 'bg:primary rel flex flex-col jc:space-between r:1.25rem p:2rem box-shadow:layered-shadow w:200 px {w:150px;p:1.5rem}@<lg {w:130px;p:1.0rem}@<md ',
+    "card-coffe": 'bg:primary rel flex flex-col jc:space-between r:1.25rem p:2rem box-shadow:layered-shadow w:200px {w:150px;p:1.5rem}@<lg {w:130px;p:1.0rem}@<md ',
     "card__image-box": 'abs top:0 left:50% translate(-50%,-70%)',
     "card__image": 'h:180px h:140px@<lg h:120px@<md',
     "btn": 'bg:white fg:secondary p:.5rem|1rem r:.5rem text-decoration:none text-align:center {p:.25rem|.5rem;f:.85rem}@<md',
