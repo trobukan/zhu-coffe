@@ -3,9 +3,9 @@ window.masterCSSConfig = {
     // > Colors
     secondary: "#4a2e19ff",
     primary: "#00804bff",
-    ["unselected-card-color"]: "#eeeeeeff",
+    "unselected-card-color": "#eeeeeeff",
     // > Card Shadow
-    ["layered-shadow"]: `0 1px 1px hsl(0deg 0% 0% / 0.075),
+    "layered-shadow": `0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075),
     0 4px 4px hsl(0deg 0% 0% / 0.075),
     0 8px 8px hsl(0deg 0% 0% / 0.075),
