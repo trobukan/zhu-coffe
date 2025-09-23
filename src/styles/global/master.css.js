@@ -23,7 +23,7 @@ window.masterCSSConfig = {
     "accordion": "flex flex-col jc:start r:.25rem ai:start w:100%@<sm p:.25rem|1rem@<sm cursor:pointer@<sm ",
     "accordion-header": "flex jc:space-between w:100% p:0px p:.5rem|1rem fg:white r:.5rem@<sm font-weight:700",
     "accordion-content": "overflow:hidden max-h:200px transition:all|0.3s m:0",
-    "accordion-collapsed": "h:0",
+    "accordion-collapsed": "h:0@<sm",
     "accordion-icon": "w:24px transition:transform|.3s display:none@>=sm"
   }
 }
