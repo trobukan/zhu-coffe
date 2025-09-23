@@ -3,4 +3,5 @@
   --primary-color: #00804bff;
   --unselected-card-color: #eeeeeeff;
   --findus-area: "title title" "info map";
+  --findus-area-mobile: "title" "info" "map";
 }
