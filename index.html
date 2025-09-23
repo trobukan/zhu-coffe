@@ -7,8 +7,9 @@
   <title>Zhu Coffe</title>
 
   <!-- > MasterCSS Framework -->
-  <script src="https://cdn.master.co/css"></script> <!-- CDN -->
-  <script src="src/styles/global/master.css.js"> </script> <!-- CONFIG -->
+  <!-- https://rc.css.master.co/guide/configuration#components -->
+  <script src="src/styles/global/master.css.js"></script> <!-- CONFIG -->
+  <script src="https://cdn.master.co/css-runtime@rc"></script> <!-- CDN -->
   <!-- JS -->
   <script src="src/scripts/main.js" defer> </script>
   <!-- > CSS  -->
@@ -21,16 +22,16 @@
   <link rel="icon" href="data:," />
 </head>
 
-<body class="font-family:Lexend,sans-serif" flex flex:col>
+<body class="font-family:Lexend,sans-serif" flex flex-col>
   <!-- > Header -->
-  <header class="rel flex flex:col js:center ai:center mb:10rem">
+  <header class="rel flex flex-col jc:center items-center mb:10rem">
     <div class="bg:$(primary-color) h:400px w:100%"></div>
     <img class="abs w:15% bottom:0 translateY(90%)" src="src/assets/big-down-circle.svg" alt="" />
     <img class="abs w:5% left:50% bottom:0 translate(-50%,20%)" src="src/assets/logo.svg" alt="" />
   </header>
   <!-- > Nav -->
   <nav class="abs top:0 left:0 bg:white w:100% p:0.5rem|1rem light-shadow">
-    <ul class="flex ai:center m:0 gap:20px list-style:none cursor:pointer color:black">
+    <ul class="flex align-items:center m:0 gap:20px list-style:none cursor:pointer color:black">
       <li>Inicio</li>
       <li>Menu</li>
       <li>
@@ -41,13 +42,13 @@
     </ul>
   </nav>
   <!-- > Main Container -->
-  <main class="flex flex:col jc:center ai:center flex-grow:1 m:0|2.25rem">
+  <main class="flex flex-col jc:center ai:center flex:1 m:0|2.25rem">
     <!-- > Card Container -->
     <div class="flex jc:center ai:center gap:20px mb:8rem">
       <!-- > Card -->
       <div class="card-coffe">
         <img class="abs h:160px top:0 translate(0,-70%)" src="src/assets/coffe.svg" alt="" />
-        <div class="flex flex:col jc:center">
+        <div class="flex flex-col jc:center">
           <h2 class="text-align:center color:white opacity:100%">
             Expresso
           </h2>
@@ -59,7 +60,7 @@
       <!-- > Card -->
       <div class="card-coffe">
         <img class="abs h:160px top:0 translate(0,-70%)" src="src/assets/coffe.svg" alt="" />
-        <div class="flex flex:col jc:center">
+        <div class="flex flex-col jc:center">
           <h2 class="text-align:center color:white opacity:100%">
             Latte
           </h2>
@@ -71,7 +72,7 @@
       <!-- > Card -->
       <div class="card-coffe">
         <img class="abs h:160px top:0 translate(0,-70%)" src="src/assets/coffe.svg" alt="" />
-        <div class="flex flex:col jc:center">
+        <div class="flex flex-col jc:center">
           <h2 class="text-align:center color:white opacity:100%">
             Cappucinno
           </h2>
@@ -83,7 +84,7 @@
       <!-- > Card -->
       <div class="card-coffe">
         <img class="abs h:160px top:0 translate(0,-70%)" src="src/assets/coffe.svg" alt="" />
-        <div class="flex flex:col jc:center">
+        <div class="flex flex-col jc:center">
           <h2 class="text-align:center color:white opacity:100%">
             Mocha
           </h2>
@@ -118,7 +119,7 @@
     <section
       class="grid w:60% gap:0|4.75rem grid-template-areas:$(findus-area) mb:4rem grid-template-areas:$(findus-area-mobile)@<md w:80%@<lg w:90%@<md">
       <h2 class="grid-area:title">Onde nos encontrar?</h2>
-      <div class="grid-area:info flex flex:col f:16px f:14px@<md">
+      <div class="grid-area:info flex flex-col f:16px f:14px@<md">
         <p>
           Av. Pastor Martin Luther King Jr., 6475<br />
           Rio de Janeiro - RJ
@@ -146,7 +147,7 @@
     class="bg:$(primary-color) grid place-items:center p:1.25|2.75rem grid-template-cols:repeat(3,1fr) grid-template-cols:1fr@<2xs">
     <div>
       <h4 class="f:1.25rem color:white">Produtos</h4>
-      <ul class="flex flex:col gap:0.5rem p:0 list-style:none color:white>li>a text-decoration:none>li>a">
+      <ul class="findus__list">
         <li><a href="">Expresso</a></li>
         <li><a href="">Latte</a></li>
         <li><a href="">Cappucino</a></li>
@@ -155,7 +156,7 @@
     </div>
     <div>
       <h4 class="f:1.25rem color:white">Empresa</h4>
-      <ul class="flex flex:col gap:0.5rem p:0 list-style:none color:white>li>a text-decoration:none>li>a">
+      <ul class="findus__list">
         <li><a href="">Sobre Nós</a></li>
         <li><a href="">Contatos</a></li>
         <li><a href="">Suporte</a></li>
@@ -163,7 +164,7 @@
     </div>
     <div>
       <h4 class="f:1.25rem color:white">Redes Socias</h4>
-      <ul class="flex flex:col gap:0.5rem p:0 list-style:none color:white>li>a text-decoration:none>li>a">
+      <ul class="findus__list">
         <li><a href="">Default</a></li>
         <li><a href="">Default</a></li>
         <li><a href="">Default</a></li>
