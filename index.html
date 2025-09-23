@@ -1,154 +1,198 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zhu Coffe</title>
 
-    <script src="https://cdn.master.co/css"></script>
-    <link rel="stylesheet" href="src/styles/index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="data:," />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zhu Coffe</title>
 
-  <body>
-    <header class="header-container">
-      <div class="header__background"></div>
-      <img
-        class="big-down-circle"
-        src="src/assets/big-down-circle.svg"
-        alt=""
-      />
-      <img class="header__logo" src="src/assets/logo.svg" alt="" />
-    </header>
-    <nav class="nav-container light-shadow">
-      <ul>
+  <!-- > MasterCSS Framework -->
+  <!-- >  Performance -->
+  <link rel="preload" as="script" href="https://cdn.master.co/css-runtime@rc">
+  <link rel="preload" as="style" href="https://cdn.master.co/normal.css">
+
+  <!-- https://rc.css.master.co/guide/configuration -->
+  <script src="src/styles/global/master.css.js"></script> <!-- CONFIG -->
+  <script src="https://cdn.master.co/css-runtime@rc"></script> <!-- CDN -->
+  <!-- > JS -->
+  <script src="src/scripts/main.js" defer> </script>
+  <!-- > CSS  -->
+  <link rel="stylesheet" href="src/styles/index.css" />
+  <!-- > Fonts/Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+  <!-- > Favicon -->
+  <link rel="icon" href="data:," />
+</head>
+
+<body class="font-family:Lexend,sans-serif" flex flex-col>
+  <!-- > Header -->
+  <header class="rel flex flex-col jc:center ai:center mb:10rem">
+    <div class="bg:primary h:400px w:100%"></div>
+    <img class="abs w:15% bottom:0 translateY(90%)" src="src/assets/big-down-circle.svg" alt="" />
+    <img class="abs w:5% left:50% bottom:0 translate(-50%,20%)" src="src/assets/logo.svg" alt="" />
+  </header>
+  <!-- > Nav -->
+  <nav class="abs top:0 left:0 bg:white w:100% box-shadow:$(light-shadow)">
+    <div class="p:0.5rem|1rem">
+      <ul class="flex align-items:center m:0 gap:20px list-style:none cursor:pointer fg:black">
         <li>Inicio</li>
         <li>Menu</li>
         <li>
-          <a
-            href="https://wa.me/5521978724730"
-            target="_blank"
-            style="text-decoration: none; color: inherit"
-          >
-            Contato</a
-          >
+          <a class="text-decoration:none fg:inherit" href="https://wa.me/5521978724730" target="_blank">
+            Contato
+          </a>
         </li>
       </ul>
-    </nav>
-    <main class="main-container">
-      <div class="card-container">
-        <div class="card-coffe light-shadow">
-          <img class="card__image" src="src/assets/coffe.svg" alt="" />
-          <div class="card__content">
-            <h2 class="card__title">Cappucinno</h2>
-            <p class="card__price">R$ 15,00</p>
-            <a class="card__btn" href="">Ver mais</a>
-          </div>
+    </div>
+  </nav>
+  <!-- > Main Container -->
+  <main class="flex flex-col jc:center ai:center flex:1 m:0|2.25rem">
+    <!-- > Card Container -->
+    <div class="flex jc:center ai:center gap:20px mb:8rem h:300px">
+      <!-- > Card -->
+      <div class="card-coffe">
+        <div class="card__image">
+          <img class="h:180px" src="src/assets/coffe.svg" alt="" />
         </div>
-        <div class="card-coffe card--selected light-shadow">
-          <img class="card__image" src="src/assets/coffe.svg" alt="" />
-          <div class="card__content">
-            <h2 class="card__title">Latte</h2>
-            <p class="card__price">R$ 15,00</p>
-            <a class="card__btn" href="">Ver mais</a>
-          </div>
+        <div class="flex flex-col jc:center">
+          <h2 class="text-align:center fg:white">Expresso</h2>
         </div>
-        <div class="card-coffe light-shadow">
-          <img class="card__image" src="src/assets/coffe.svg" alt="" />
-          <div class="card__content">
-            <h2 class="card__title">Mocha</h2>
-            <p class="card__price">R$ 15,00</p>
-            <a class="card__btn" href="">Ver mais</a>
-          </div>
-        </div>
-        <div class="card-coffe light-shadow">
-          <img class="card__image" src="src/assets/coffe.svg" alt="" />
-          <div class="card__content">
-            <h2 class="card__title">Expresso</h2>
-            <p class="card__price">R$ 15,00</p>
-            <a class="card__btn" href="">Ver mais</a>
-          </div>
+        <div class="flex flex-col">
+          <p class="fg:white">R$ 15,00</p>
+          <a class="btn" href="">Adicionar ao carrinho</a>
         </div>
       </div>
-      <section class="chooseus-section">
-        <h2 class="chooseus__title" style="grid-area: title">
-          Por que nos escolher?
-        </h2>
-        <p class="chooseus__text" style="grid-area: text">
+
+      <!-- > Card -->
+      <div class="card-coffe">
+        <div class="card__image">
+          <img class="h:180px" src="src/assets/coffe.svg" alt="" />
+        </div>
+        <div class="flex flex-col jc:center">
+          <h2 class="text-align:center fg:white opacity:100%">
+            Latte
+          </h2>
+          <p class="fg:white">R$ 15,00</p>
+          <a class="btn" href="">Adicionar ao carrinho</a>
+        </div>
+      </div>
+      <!-- > Card -->
+      <div class="card-coffe">
+        <div class="card__image">
+          <img class="h:180px" src="src/assets/coffe.svg" alt="" />
+        </div>
+        <div class="flex flex-col jc:center">
+          <h2 class="text-align:center fg:white opacity:100%">
+            Cappucinno
+          </h2>
+          <p class="fg:white">R$ 15,00</p>
+          <a class="btn" href="">Adicionar ao carrinho</a>
+        </div>
+      </div>
+      <!-- > Card -->
+      <div class="card-coffe">
+        <div class="card__image">
+          <img class="h:180px" src="src/assets/coffe.svg" alt="" />
+        </div>
+        <div class="flex flex-col jc:center">
+          <h2 class="text-align:center fg:white opacity:100%">
+            Mocha
+          </h2>
+          <p class="fg:white">R$ 15,00</p>
+          <a class="btn" href="">Adicionar ao carrinho</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- > Chooseus Section -->
+    <section class="grid w:60% grid-template-cols:repeat(2,1fr) w:80%@<lg {grid-template-cols:1fr;w:90%}@<sm mb:4rem">
+      <img class="bg:primary w:300px h:300px {w:250px;h:250px}@<lg {w:200px;h:200px}@<md {w:150px;h:150px}@<sm" src=""
+        alt="" />
+      </div>
+      <div>
+        <h2>Por que nos escolher?</h2>
+        <p class="pr:1rem  f:1rem f:0.9rem@<sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor in
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <img class="chooseus__image" style="grid-area: image" src="" alt="" />
-      </section>
-      <section class="findus-section">
-        <h2 class="findus__title" style="grid-area: title">
-          Onde nos encontrar?
-        </h2>
-        <div class="findus__info" style="grid-area: info">
-          <p class="findus__address" style="grid-area: address">
-            Av. Pastor Martin Luther King Jr., 6475<br />
-            Rio de Janeiro - RJ
-          </p>
-          <p class="findus__hours" style="grid-area: hours">
-            Segunda a Sexta: 8h às 18h<br />
-            Sábado: 9h às 14h<br />
-            Domingo: Fechado
-          </p>
-          <p class="findus__contact" style="grid-area: contact">
-            Telefone: (21) 97872-4730<br />
-            E-mail: contato@zhucoffe.com.br
-          </p>
-        </div>
-        <div class="findus__map" style="grid-area: map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1838.3354789203422!2d-43.31996290556924!3d-22.851660078465546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997cbb82e26d49%3A0x48d8a33ccaea3112!2sSESI%20%2F%20SENAI%20Vicente%20de%20Carvalho!5e0!3m2!1spt-BR!2sbr!4v1758495451014!5m2!1spt-BR!2sbr"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </section>
-    </main>
-    <footer class="footer-container light-shadow">
-      <div class="footer__content">
-        <div class="footer__row">
-          <h4 class="footer__title">Produtos</h4>
-          <ul class="footer__list">
-            <li><a href="">Expresso</a></li>
-            <li><a href="">Latte</a></li>
-            <li><a href="">Cappucino</a></li>
-            <li><a href="">Mocha</a></li>
-          </ul>
-        </div>
-        <div class="footer__row">
-          <h4 class="footer__title">Empresa</h4>
-          <ul class="footer__list">
-            <li><a href="">Sobre Nós</a></li>
-            <li><a href="">Contatos</a></li>
-            <li><a href="">Suporte</a></li>
-          </ul>
-        </div>
-        <div class="footer_row">
-          <h4 class="footer__title">Redes Sociais</h4>
-          <ul class="footer__list">
-            <li><a href="">Default </a></li>
-            <li><a href="">Default</a></li>
-            <li><a href="">Default</a></li>
-          </ul>
-        </div>
       </div>
-    </footer>
-  </body>
+    </section>
+    <!-- > Findus Section -->
+    <section
+      class="grid w:60% gap:0|4.75rem grid-template-areas:$(findus-area) mb:4rem grid-template-areas:$(findus-area-mobile)@<md w:80%@<lg w:90%@<md">
+      <h2 class="grid-area:title">Onde nos encontrar?</h2>
+      <div class="grid-area:info flex flex-col f:1rem f:0.9rem@<sm">
+        <p>
+          Av. Pastor Martin Luther King Jr., 6475<br />
+          Rio de Janeiro - RJ
+        </p>
+        <p>
+          Segunda a Sexta: 8h às 18h<br />
+          Sábado: 9h às 14h<br />
+          Domingo: Fechado
+        </p>
+        <p>
+          Telefone: (21) 97872-4730<br />
+          E-mail: contato@zhucoffe.com.br
+        </p>
+      </div>
+      <div class="grid-area:map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1838.3354789203422!2d-43.31996290556924!3d-22.851660078465546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997cbb82e26d49%3A0x48d8a33ccaea3112!2sSESI%20%2F%20SENAI%20Vicente%20de%20Carvalho!5e0!3m2!1spt-BR!2sbr!4v1758495451014!5m2!1spt-BR!2sbr"
+          style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          class="w:100% h:100%"></iframe>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <div
+      class="bg:primary  p:1rem|2rem grid place-items:center grid-template-cols:repeat(3,1fr) grid-template-cols:1fr@<sm gap:1rem">
+      <!-- Produtos -->
+      <div class="accordion">
+        <div class="accordion__header">
+          <span>Produtos</span>
+          <img src="src/assets/arrow-up.svg" class="accordion__icon" />
+        </div>
+        <ul class="accordion__content accordion--collapsed list">
+          <li><a href="">Expresso</a></li>
+          <li><a href="">Latte</a></li>
+          <li><a href="">Cappucino</a></li>
+          <li><a href="">Mocha</a></li>
+        </ul>
+      </div>
+      <!-- Empresa -->
+      <div class="accordion">
+        <div class="accordion__header">
+          <span>Empresa</span>
+          <img src="src/assets/arrow-up.svg" class="accordion-icon" />
+        </div>
+        <ul class="accordion-content accordion--collapsed list">
+          <li><a href="">Sobre Nós</a></li>
+          <li><a href="">Contatos</a></li>
+          <li><a href="">Suporte</a></li>
+        </ul>
+      </div>
+      <!-- Redes Sociais -->
+      <div class="accordion">
+        <div class="accordion__header">
+          <span>Redes Sociais</span>
+          <img src="src/assets/arrow-up.svg" class="accordion__icon" />
+        </div>
+        <ul class="accordion__content accordion--collapsed list">
+          <li><a href="">Instagram</a></li>
+          <li><a href="https://github.com/trobukan/zhu-coffe">Github</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
