@@ -28,13 +28,13 @@
 
 <body class="font-family:Lexend,sans-serif" flex flex-col>
   <!-- > Header -->
-  <header class="rel flex flex-col jc:center items-center mb:10rem">
+  <header class="rel flex flex-col jc:center ai:center mb:10rem">
     <div class="bg:primary h:400px w:100%"></div>
     <img class="abs w:15% bottom:0 translateY(90%)" src="src/assets/big-down-circle.svg" alt="" />
     <img class="abs w:5% left:50% bottom:0 translate(-50%,20%)" src="src/assets/logo.svg" alt="" />
   </header>
   <!-- > Nav -->
-  <nav class="abs top:0 left:0 bg:white w:100% light-shadow">
+  <nav class="abs top:0 left:0 bg:white w:100% box-shadow:$(light-shadow)">
     <div class="p:0.5rem|1rem">
       <ul class="flex align-items:center m:0 gap:20px list-style:none cursor:pointer fg:black">
         <li>Inicio</li>
@@ -50,62 +50,70 @@
   <!-- > Main Container -->
   <main class="flex flex-col jc:center ai:center flex:1 m:0|2.25rem">
     <!-- > Card Container -->
-    <div class="flex jc:center ai:center gap:20px mb:8rem">
+    <div class="flex jc:center ai:center gap:20px mb:8rem h:300px">
       <!-- > Card -->
       <div class="card-coffe">
-        <img class="abs h:160px top:0 translate(0,-70%)" src="src/assets/coffe.svg" alt="" />
+        <div class="card__image">
+          <img class="h:180px" src="src/assets/coffe.svg" alt="" />
+        </div>
         <div class="flex flex-col jc:center">
-          <h2 class="text-align:center fg:white opacity:100%">
-            Expresso
-          </h2>
+          <h2 class="text-align:center fg:white">Expresso</h2>
+        </div>
+        <div class="flex flex-col">
           <p class="fg:white">R$ 15,00</p>
-          <a class="btn" href="">Ver mais</a>
+          <a class="btn" href="">Adicionar ao carrinho</a>
         </div>
       </div>
+
       <!-- > Card -->
       <div class="card-coffe">
-        <img class="abs h:160px top:0 translate(0,-70%)" src="src/assets/coffe.svg" alt="" />
+        <div class="card__image">
+          <img class="h:180px" src="src/assets/coffe.svg" alt="" />
+        </div>
         <div class="flex flex-col jc:center">
           <h2 class="text-align:center fg:white opacity:100%">
             Latte
           </h2>
           <p class="fg:white">R$ 15,00</p>
-          <a class="btn" href="">Ver mais</a>
+          <a class="btn" href="">Adicionar ao carrinho</a>
         </div>
       </div>
       <!-- > Card -->
       <div class="card-coffe">
-        <img class="abs h:160px top:0 translate(0,-70%)" src="src/assets/coffe.svg" alt="" />
+        <div class="card__image">
+          <img class="h:180px" src="src/assets/coffe.svg" alt="" />
+        </div>
         <div class="flex flex-col jc:center">
           <h2 class="text-align:center fg:white opacity:100%">
             Cappucinno
           </h2>
           <p class="fg:white">R$ 15,00</p>
-          <a class="btn" href="">Ver mais</a>
+          <a class="btn" href="">Adicionar ao carrinho</a>
         </div>
       </div>
       <!-- > Card -->
       <div class="card-coffe">
-        <img class="abs h:160px top:0 translate(0,-70%)" src="src/assets/coffe.svg" alt="" />
+        <div class="card__image">
+          <img class="h:180px" src="src/assets/coffe.svg" alt="" />
+        </div>
         <div class="flex flex-col jc:center">
           <h2 class="text-align:center fg:white opacity:100%">
             Mocha
           </h2>
           <p class="fg:white">R$ 15,00</p>
-          <a class="btn" href="">Ver mais</a>
+          <a class="btn" href="">Adicionar ao carrinho</a>
         </div>
       </div>
     </div>
 
     <!-- > Chooseus Section -->
     <section class="grid w:60% grid-template-cols:repeat(2,1fr) w:80%@<lg {grid-template-cols:1fr;w:90%}@<sm mb:4rem">
-      <div class="p:20px">
-        <img class="bg:primary w:300px h:300px {w:250px;h:250px}@<lg {w:200px;h:200px}@<md {w:150px;h:150px}@<sm" src=""
-          alt="" />
+      <img class="bg:primary w:300px h:300px {w:250px;h:250px}@<lg {w:200px;h:200px}@<md {w:150px;h:150px}@<sm" src=""
+        alt="" />
       </div>
       <div>
         <h2>Por que nos escolher?</h2>
-        <p class="f:16px pr:1rem f:14px@<md">
+        <p class="pr:1rem  f:1rem f:0.9rem@<sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
           ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -120,7 +128,7 @@
     <section
       class="grid w:60% gap:0|4.75rem grid-template-areas:$(findus-area) mb:4rem grid-template-areas:$(findus-area-mobile)@<md w:80%@<lg w:90%@<md">
       <h2 class="grid-area:title">Onde nos encontrar?</h2>
-      <div class="grid-area:info flex flex-col f:16px f:14px@<md">
+      <div class="grid-area:info flex flex-col f:1rem f:0.9rem@<sm">
         <p>
           Av. Pastor Martin Luther King Jr., 6475<br />
           Rio de Janeiro - RJ
@@ -144,32 +152,45 @@
     </section>
   </main>
   <!-- Footer -->
-  <footer
-    class="bg:primary w:100% grid place-items:center grid-template-cols:repeat(3,1fr) grid-template-cols:1fr@<2xs">
-    <div>
-      <h4 class="f:1.25rem fg:white">Produtos</h4>
-      <ul class="findus__list">
-        <li><a href="">Expresso</a></li>
-        <li><a href="">Latte</a></li>
-        <li><a href="">Cappucino</a></li>
-        <li><a href="">Mocha</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="f:1.25rem fg:white">Empresa</h4>
-      <ul class="findus__list">
-        <li><a href="">Sobre Nós</a></li>
-        <li><a href="">Contatos</a></li>
-        <li><a href="">Suporte</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="f:1.25rem fg:white">Redes Socias</h4>
-      <ul class="findus__list">
-        <li><a href="">Default</a></li>
-        <li><a href="">Default</a></li>
-        <li><a href="">Default</a></li>
-      </ul>
+  <footer>
+    <div
+      class="bg:primary  p:1rem|2rem grid place-items:center grid-template-cols:repeat(3,1fr) grid-template-cols:1fr@<sm gap:1rem">
+      <!-- Produtos -->
+      <div class="accordion">
+        <div class="accordion-header">
+          <span>Produtos</span>
+          <img src="src/assets/arrow-up.svg" class="accordion-icon" />
+        </div>
+        <ul class="accordion-content accordion-collapsed list">
+          <li><a href="">Expresso</a></li>
+          <li><a href="">Latte</a></li>
+          <li><a href="">Cappucino</a></li>
+          <li><a href="">Mocha</a></li>
+        </ul>
+      </div>
+      <!-- Empresa -->
+      <div class="accordion">
+        <div class="accordion-header">
+          <span>Empresa</span>
+          <img src="src/assets/arrow-up.svg" class="accordion-icon" />
+        </div>
+        <ul class="accordion-content accordion-collapsed list">
+          <li><a href="">Sobre Nós</a></li>
+          <li><a href="">Contatos</a></li>
+          <li><a href="">Suporte</a></li>
+        </ul>
+      </div>
+      <!-- Redes Sociais -->
+      <div class="accordion">
+        <div class="accordion-header">
+          <span>Redes Sociais</span>
+          <img src="src/assets/arrow-up.svg" class="accordion-icon" />
+        </div>
+        <ul class="accordion-content accordion-collapsed list">
+          <li><a href="">Instagram</a></li>
+          <li><a href="https://github.com/trobukan/zhu-coffe">Github</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 </body>

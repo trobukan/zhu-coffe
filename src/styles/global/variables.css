@@ -1,8 +1,4 @@
 :root {
-  --unselected-card-color: #eeeeeeff;
-
   --findus-area: "title title" "info map";
   --findus-area-mobile: "title" "info" "map";
-
-  --light-shadow: 0px 12px 12px #00000015;
 }
