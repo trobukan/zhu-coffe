@@ -6,44 +6,6 @@
   flex-grow: 1;
   margin: 0 2.25rem;
 }
-.findus__info {
-  font-size: 18px;
-}
-.findus-section {
-  display: grid;
-  width: 60%;
-  column-gap: 16px;
-  grid-template-areas:
-    "title title"
-    "map info";
-  grid-template-columns: 1fr 2fr;
-  margin-bottom: 120px;
-}
-.findus__map iframe {
-  width: 400px;
-  height: 400px;
-}
-@media (max-width: 1200px) {
-  .findus__map iframe {
-    width: 300px;
-    height: 300px;
-  }
-  .findus-section {
-    width: 80%;
-  }
-}
-@media (max-width: 1024px) {
-  .findus__map iframe {
-    width: 200px;
-    height: 200px;
-  }
-  .findus__info {
-    font-size: 14px;
-  }
-  .findus-section {
-    width: 90%;
-  }
-}
 @media (max-width: 426px) {
   .findus-section {
     grid-template-areas:
