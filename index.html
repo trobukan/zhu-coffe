@@ -29,17 +29,17 @@
 <body class="font-family:Lexend,sans-serif" flex flex-col>
   <!-- > Header -->
   <header class="rel flex flex-col jc:center items-center mb:10rem">
-    <div class="bg:$(primary-color) h:400px w:100%"></div>
+    <div class="bg:primary h:400px w:100%"></div>
     <img class="abs w:15% bottom:0 translateY(90%)" src="src/assets/big-down-circle.svg" alt="" />
     <img class="abs w:5% left:50% bottom:0 translate(-50%,20%)" src="src/assets/logo.svg" alt="" />
   </header>
   <!-- > Nav -->
   <nav class="abs top:0 left:0 bg:white w:100% p:0.5rem|1rem light-shadow">
-    <ul class="flex align-items:center m:0 gap:20px list-style:none cursor:pointer color:black">
+    <ul class="flex align-items:center m:0 gap:20px list-style:none cursor:pointer fg:black">
       <li>Inicio</li>
       <li>Menu</li>
       <li>
-        <a class="text-decoration:none color:inherit" href="https://wa.me/5521978724730" target="_blank">
+        <a class="text-decoration:none fg:inherit" href="https://wa.me/5521978724730" target="_blank">
           Contato
         </a>
       </li>
@@ -53,48 +53,44 @@
       <div class="card-coffe">
         <img class="abs h:160px top:0 translate(0,-70%)" src="src/assets/coffe.svg" alt="" />
         <div class="flex flex-col jc:center">
-          <h2 class="text-align:center color:white opacity:100%">
+          <h2 class="text-align:center fg:white opacity:100%">
             Expresso
           </h2>
-          <p class="color:white">R$ 15,00</p>
-          <a class="color:$(secondary-color) text-wrap:nowrap text-decoration:none p:0.25rem|1rem bg:white r:0.5rem"
-            href="">Ver mais</a>
+          <p class="fg:white">R$ 15,00</p>
+          <a class="btn" href="">Ver mais</a>
         </div>
       </div>
       <!-- > Card -->
       <div class="card-coffe">
         <img class="abs h:160px top:0 translate(0,-70%)" src="src/assets/coffe.svg" alt="" />
         <div class="flex flex-col jc:center">
-          <h2 class="text-align:center color:white opacity:100%">
+          <h2 class="text-align:center fg:white opacity:100%">
             Latte
           </h2>
-          <p class="color:white">R$ 15,00</p>
-          <a class="color:$(secondary-color) text-wrap:nowrap text-decoration:none p:0.25rem|1rem bg:white r:0.5rem"
-            href="">Ver mais</a>
+          <p class="fg:white">R$ 15,00</p>
+          <a class="btn" href="">Ver mais</a>
         </div>
       </div>
       <!-- > Card -->
       <div class="card-coffe">
         <img class="abs h:160px top:0 translate(0,-70%)" src="src/assets/coffe.svg" alt="" />
         <div class="flex flex-col jc:center">
-          <h2 class="text-align:center color:white opacity:100%">
+          <h2 class="text-align:center fg:white opacity:100%">
             Cappucinno
           </h2>
-          <p class="color:white">R$ 15,00</p>
-          <a class="color:$(secondary-color) text-wrap:nowrap text-decoration:none p:0.25rem|1rem bg:white r:0.5rem"
-            href="">Ver mais</a>
+          <p class="fg:white">R$ 15,00</p>
+          <a class="btn" href="">Ver mais</a>
         </div>
       </div>
       <!-- > Card -->
       <div class="card-coffe">
         <img class="abs h:160px top:0 translate(0,-70%)" src="src/assets/coffe.svg" alt="" />
         <div class="flex flex-col jc:center">
-          <h2 class="text-align:center color:white opacity:100%">
+          <h2 class="text-align:center fg:white opacity:100%">
             Mocha
           </h2>
-          <p class="color:white">R$ 15,00</p>
-          <a class="color:$(secondary-color) text-wrap:nowrap text-decoration:none p:0.25rem|1rem bg:white r:0.5rem"
-            href="">Ver mais</a>
+          <p class="fg:white">R$ 15,00</p>
+          <a class="btn" href="">Ver mais</a>
         </div>
       </div>
     </div>
@@ -103,7 +99,7 @@
     <section class="grid w:60% grid-template-cols:repeat(2,1fr) w:80%@<lg {grid-template-cols:1fr;w:90%}@<sm mb:4rem">
       <div class="p:20px">
         <img
-          class="bg:$(primary-color) w:300px h:300px {w:250px;h:250px}@<lg {w:200px;h:200px}@<md {w:150px;h:150px}@<sm"
+          class="bg:primary w:300px h:300px {w:250px;h:250px}@<lg {w:200px;h:200px}@<md {w:150px;h:150px}@<sm"
           src="" alt="" />
       </div>
       <div>
@@ -148,9 +144,9 @@
   </main>
   <!-- Footer -->
   <footer
-    class="bg:$(primary-color) grid place-items:center p:1.25|2.75rem grid-template-cols:repeat(3,1fr) grid-template-cols:1fr@<2xs">
+    class="bg:primary grid place-items:center p:1.25|2.75rem grid-template-cols:repeat(3,1fr) grid-template-cols:1fr@<2xs">
     <div>
-      <h4 class="f:1.25rem color:white">Produtos</h4>
+      <h4 class="f:1.25rem fg:white">Produtos</h4>
       <ul class="findus__list">
         <li><a href="">Expresso</a></li>
         <li><a href="">Latte</a></li>
@@ -159,7 +155,7 @@
       </ul>
     </div>
     <div>
-      <h4 class="f:1.25rem color:white">Empresa</h4>
+      <h4 class="f:1.25rem fg:white">Empresa</h4>
       <ul class="findus__list">
         <li><a href="">Sobre Nós</a></li>
         <li><a href="">Contatos</a></li>
@@ -167,7 +163,7 @@
       </ul>
     </div>
     <div>
-      <h4 class="f:1.25rem color:white">Redes Socias</h4>
+      <h4 class="f:1.25rem fg:white">Redes Socias</h4>
       <ul class="findus__list">
         <li><a href="">Default</a></li>
         <li><a href="">Default</a></li>
