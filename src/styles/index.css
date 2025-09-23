@@ -1,8 +1,4 @@
-@import "abstracts/variables.css";
-@import "base/reset.css";
 @import "components/card.css";
-@import "layout/header.css";
-@import "layout/footer.css";
-@import "layout/nav.css";
-@import "layout/main.css";
-@import "utils/utils.css";
+@import "global/variables.css";
+@import "global/reset.css"
+
