@@ -6,31 +6,9 @@
   flex-grow: 1;
   margin: 0 2.25rem;
 }
-
-/* Chooseus Section */
-.chooseus-section {
-  display: grid;
-  grid-template-areas:
-    "title title"
-    "text image";
-  width: 60%;
-  margin-bottom: 34px;
-}
-.chooseus__image {
-  background-color: var(--primary-color);
-  width: 300px;
-  height: 300px;
-}
-.chooseus__text {
-  font-size: 18px;
-  padding-right: 16px;
-  text-wrap-style: balance;
-  text-overflow: inherit;
-}
 .findus__info {
   font-size: 18px;
 }
-
 .findus-section {
   display: grid;
   width: 60%;
@@ -41,63 +19,32 @@
   grid-template-columns: 1fr 2fr;
   margin-bottom: 120px;
 }
-
 .findus__map iframe {
   width: 400px;
   height: 400px;
 }
 @media (max-width: 1200px) {
-  .chooseus__image {
-    width: 250px;
-    height: 250px;
-  }
   .findus__map iframe {
     width: 300px;
     height: 300px;
-  }
-  .chooseus-section {
-    width: 80%;
   }
   .findus-section {
     width: 80%;
   }
 }
 @media (max-width: 1024px) {
-  .chooseus__image {
-    width: 200px;
-    height: 200px;
-  }
   .findus__map iframe {
     width: 200px;
     height: 200px;
   }
-  .chooseus__text {
-    font-size: 14px;
-  }
   .findus__info {
     font-size: 14px;
-  }
-  .chooseus-section {
-    width: 90%;
   }
   .findus-section {
     width: 90%;
   }
 }
-@media (max-width: 768px) {
-  .chooseus__image {
-    width: 150px;
-    height: 150px;
-  }
-}
-
 @media (max-width: 426px) {
-  .chooseus-section {
-    grid-template-areas:
-      "title"
-      "image"
-      "text";
-  }
   .findus-section {
     grid-template-areas:
       "title"
