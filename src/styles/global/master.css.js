@@ -17,7 +17,7 @@ window.masterCSSConfig = {
     "card__image-box": 'abs top:0 left:50% translate(-50%,-70%)',
     "card__image": 'h:180px h:140px@<lg h:120px@<md',
     "btn": 'bg:white fg:secondary p:.5rem|1rem r:.5rem text-decoration:none text-align:center {p:.25rem|.5rem;f:.85rem}@<md',
-    "list": 'gap:.5rem p:0 list-style:none color:white>li>a text-decoration:none>li>a',
+    "list": 'gap:.5rem p:0 list-style:none color:white>li>a text-decoration:none>li>a', 
 
     // > Accordion
     "accordion": "flex flex-col jc:start r:.25rem ai:start w:100%@<sm p:.25rem|1rem@<sm cursor:pointer@<sm ",
