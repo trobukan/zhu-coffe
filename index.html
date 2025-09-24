@@ -26,7 +26,7 @@
   <link rel="icon" href="data:," />
 </head>
 
-<body class="font-family:Lexend,sans-serif" flex flex-col>
+<body class="font-family:Lexend,sans-serif flex flex-col min-h:100vh">
   <!-- > Header -->
   <header class="rel flex flex-col jc:center ai:center mb:10rem">
     <div class="bg:primary h:400px w:100%"></div>
@@ -48,7 +48,7 @@
     </div>
   </nav>
   <!-- > Main Container -->
-  <main class=" flex-col jc:center ai:center flex-grow:1 m:0|2.25rem">
+  <main class="flex flex-col jc:center ai:center flex-grow:1 m:0|2.25rem">
     <!-- > Card Container -->
     <div class="flex jc:center ai:center gap:20px mb:4.25rem">
       <!-- > Card -->
@@ -125,7 +125,7 @@
     </section>
     <!-- > Findus Section -->
     <section
-      class="grid w:60% gap:0|4.75rem grid-template-areas:$(findus-area) mb:4rem grid-template-areas:$(findus-area-mobile)@<md w:80%@<lg w:90%@<md">
+      class="grid w:60% gap:0|4.75rem grid-template-areas:$(findus-area) mb:4rem grid-template-areas:$(findus-area-mobile)@<md w:80%@<lg w:90%@<sm">
       <h2 class="grid-area:title">Onde nos encontrar?</h2>
       <div class="grid-area:info flex flex-col f:1rem f:.9rem@<sm">
         <p>
@@ -146,7 +146,7 @@
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1838.3354789203422!2d-43.31996290556924!3d-22.851660078465546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997cbb82e26d49%3A0x48d8a33ccaea3112!2sSESI%20%2F%20SENAI%20Vicente%20de%20Carvalho!5e0!3m2!1spt-BR!2sbr!4v1758495451014!5m2!1spt-BR!2sbr"
           style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          class="w:100% h:100%"></iframe>
+          class="w:100% h:100% {w:50%:h:50%}@<sm"></iframe>
       </div>
     </section>
   </main>
