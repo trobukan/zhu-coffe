@@ -3,7 +3,8 @@ window.masterCSSConfig = {
     // > Colors
     secondary: "#4a2e19ff",
     primary: "#00804bff",
-    ["unselected-card-color"]: "#eeeeeeff",
+    "unselected-card-color": "#eeeeeeff",
+
     // > Card Shadow
     ["layered-shadow"]: `0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075),
@@ -12,6 +13,9 @@ window.masterCSSConfig = {
     0 16px 16px hsl(0deg 0% 0% / 0.075)`
   },
   components: {
+    // > Parallax
+    "parallax": '{abs;top:0;bottom;0;w:100%;pointer-events:none}>img',
+
     // > Card
     "card-coffe": 'bg:primary rel flex flex-col jc:space-between r:1.25rem p:2rem box-shadow:layered-shadow w:200px {w:150px;p:1.5rem}@<lg {w:130px;p:1.0rem}@<md ',
     "card__image-box": 'abs top:0 left:50% translate(-50%,-70%)',

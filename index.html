@@ -27,14 +27,8 @@
 </head>
 
 <body class="font-family:Lexend,sans-serif flex flex-col min-h:100vh">
-  <!-- > Header -->
-  <header class="rel flex flex-col jc:center ai:center mb:10rem">
-    <div class="bg:primary h:400px w:100%"></div>
-    <img class="abs w:15% bottom:0 translateY(90%)" src="src/assets/big-down-circle.svg" alt="" />
-    <img class="abs w:5% left:50% bottom:0 translate(-50%,20%)" src="src/assets/logo.svg" alt="" />
-  </header>
   <!-- > Nav -->
-  <nav class="abs top:0 left:0 bg:white w:100% box-shadow:$(light-shadow)">
+  <nav class="sticky top:0 left:0 bg:white w:100% box-shadow:$(light-shadow) z-index:999">
     <div class="p:.5rem|1rem">
       <ul class="flex align-items:center m:0 gap:20px list-style:none cursor:pointer fg:black">
         <li>Inicio</li>
@@ -47,10 +41,20 @@
       </ul>
     </div>
   </nav>
+  <!-- > Parallax -->
+  <section class="parallax rel flex jc:center ai:center height:100vh overflow:hidden z-index:-2">
+    <img src="src/assets/parallax/bg.png" data-speed="0.3" alt="">
+    <img src="src/assets/parallax/grass.png" data-speed="0.3" alt="">
+    <span class="fixed text-wrap:nowrap fg:primary f:8rem top:0 translateY(50%) f:6rem@<lg f:4rem@<md f:2.5rem@<xs f:2rem@<2xs z-index:0">O sabor
+      da natureza</span>
+    <img src="src/assets/parallax/coffe.png" data-speed="0.3" alt="">
+    <img src="src/assets/parallax/grass-2.png" data-speed="0.3" alt="">
+  </section>
+
   <!-- > Main Container -->
-  <main class="flex flex-col jc:center ai:center flex-grow:1 m:0|2.25rem">
+  <main class="bg:white rel flex flex-col jc:center ai:center flex-grow:1 m:0|2.25rem">
     <!-- > Card Container -->
-    <div class="flex jc:center ai:center gap:20px mb:4.25rem">
+    <div class="flex jc:center ai:center gap:20px mb:4.25rem display:none@<sm">
       <!-- > Card -->
       <div class="card-coffe">
         <div class="card__image-box">
