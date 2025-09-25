@@ -14,7 +14,7 @@ window.masterCSSConfig = {
   },
   components: {
     // > Parallax
-    "parallax":'{abs;top:0;bottom:0;w:100%}>picture {w:100%}>picture>img',
+    "parallax": '{abs;top:0;bottom:0;w:100%;pointer-events:none;transition:filter|.1s|ease-out}>picture {w:100%}>picture>img',
 
     // > Card
     "card-coffe": 'bg:primary rel flex flex-col jc:space-between r:1.25rem p:2rem box-shadow:layered-shadow w:200px {w:150px;p:1.5rem}@<lg {w:130px;p:1.0rem}@<md ',
