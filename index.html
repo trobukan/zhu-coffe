@@ -26,17 +26,12 @@
   <link rel="icon" href="data:," />
 </head>
 
-<body class="font-family:Lexend,sans-serif" flex flex-col>
-  <!-- > Header -->
-  <header class="rel flex flex-col jc:center ai:center mb:10rem">
-    <div class="bg:primary h:400px w:100%"></div>
-    <img class="abs w:15% bottom:0 translateY(90%)" src="src/assets/big-down-circle.svg" alt="" />
-    <img class="abs w:5% left:50% bottom:0 translate(-50%,20%)" src="src/assets/logo.svg" alt="" />
-  </header>
+<body class="font-family:Lexend,sans-serif flex flex-col min-h:100vh scroll-behavior:smooth">
   <!-- > Nav -->
-  <nav class="abs top:0 left:0 bg:white w:100% box-shadow:$(light-shadow)">
-    <div class="p:.5rem|1rem">
-      <ul class="flex align-items:center m:0 gap:20px list-style:none cursor:pointer fg:black">
+  <nav class="fixed top:0 left:0 bg:transparent w:100% box-shadow:$(light-shadow) z-index:999">
+    <div class="flex jc:start p:.25rem|2rem">
+      <img class="w:32px fill:primary" src="src/assets/logo.svg" alt="">
+      <ul class="flex align-items:center m:0 gap:20px list-style:none cursor:pointer fg:primary">
         <li>Inicio</li>
         <li>Menu</li>
         <li>
@@ -47,10 +42,36 @@
       </ul>
     </div>
   </nav>
+  <!-- >Header Parallax -->
+  <header
+    class="parallax rel flex jc:center ai:center height:100vh mb:10rem {mb:8rem;height:80vh}@<lg {mb:6rem;height:65vh}@<md {mb:4rem;height:60vh}@<sm 
+    {mb:2rem;height:80vh}@<xs {mb:1rem;height:80vh}@<2xs {mb:1rem;height:60vh}@<3xs {.5rem;height:50vh}@<4xs overflow:hidden z-index:-2">
+    <picture>
+      <source media="(max-width: 768px)" srcset="src/assets/parallax/bg-mobile.png">
+      <img src="src/assets/parallax/bg.png" data-speed="0.4" alt="Plano de fundo da cidade">
+    </picture>
+    <picture>
+      <source media="(max-width: 768px)" srcset="src/assets/parallax/grass-mobile.png">
+      <img src="src/assets/parallax/grass.png" data-speed="0.3" alt="Vegetação">
+    </picture>
+    <span
+      class="fixed text-wrap:nowrap fg:primary f:7.25rem top:0 translateY(60%) f:5.75rem@<lg f:4.75rem@<md {translateY(70%);f:3.75rem}@<sm {translateY(160%);f:3.75rem}@<xs {translateY(160%);f:3rem}@<2xs {translateY(160%);f:2.25rem}@<3xs {translateY(180%);f:1.5rem}@<4xs"
+      data-speed="1">
+      O sabor da natureza
+    </span>
+    <picture>
+      <source media="(max-width: 768px)" srcset="src/assets/parallax/coffe-mobile.png">
+      <img src="src/assets/parallax/coffe.png" data-speed="0.3" alt="Copo de café">
+    </picture>
+    <picture>
+      <source media="(max-width: 768px)" srcset="src/assets/parallax/grass-2-mobile.png">
+      <img src="src/assets/parallax/grass-2.png" data-speed="0.2" alt="Vegetação frontal">
+    </picture>
+  </header>
   <!-- > Main Container -->
-  <main class=" flex-col jc:center ai:center flex-grow:1 m:0|2.25rem">
+  <main class="bg:white rel flex flex-col jc:center ai:center flex-grow:1 m:0|2.25rem">
     <!-- > Card Container -->
-    <div class="flex jc:center ai:center gap:20px mb:4.25rem">
+    <div class="flex jc:center ai:center gap:20px mb:4.25rem display:none@<sm">
       <!-- > Card -->
       <div class="card-coffe">
         <div class="card__image-box">
@@ -111,7 +132,7 @@
         alt="" />
       </div>
       <div>
-        <h2>Por que nos escolher?</h2>
+        <h2 fg:primary>Por que nos escolher?</h2>
         <p class="pr:1rem  f:1rem f:0.9rem@<sm">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -125,7 +146,7 @@
     </section>
     <!-- > Findus Section -->
     <section
-      class="grid w:60% gap:0|4.75rem grid-template-areas:$(findus-area) mb:4rem grid-template-areas:$(findus-area-mobile)@<md w:80%@<lg w:90%@<md">
+      class="grid w:60% gap:0|4.75rem grid-template-areas:$(findus-area) mb:4rem grid-template-areas:$(findus-area-mobile)@<md w:80%@<lg w:90%@<sm">
       <h2 class="grid-area:title">Onde nos encontrar?</h2>
       <div class="grid-area:info flex flex-col f:1rem f:.9rem@<sm">
         <p>
@@ -146,7 +167,7 @@
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1838.3354789203422!2d-43.31996290556924!3d-22.851660078465546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997cbb82e26d49%3A0x48d8a33ccaea3112!2sSESI%20%2F%20SENAI%20Vicente%20de%20Carvalho!5e0!3m2!1spt-BR!2sbr!4v1758495451014!5m2!1spt-BR!2sbr"
           style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          class="w:100% h:100%"></iframe>
+          class="w:100% h:100% {w:50%:h:50%}@<sm"></iframe>
       </div>
     </section>
   </main>

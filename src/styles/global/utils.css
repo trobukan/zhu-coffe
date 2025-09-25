@@ -1,0 +1,4 @@
+.parallax {
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 94%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 94%);
+}
