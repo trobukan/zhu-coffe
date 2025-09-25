@@ -13,11 +13,21 @@ document.querySelectorAll('.accordion').forEach((acc) => {
 
 // > Hero Parallax Scroll
 window.addEventListener('scroll', () => {
+  const parallaxContainer = document.querySelector('.parallax');
   const parallaxItems = document.querySelectorAll('[data-speed]');
+  const heroText = document.querySelector('.parallax span');
+
   const scrollPosition = window.scrollY;
 
   parallaxItems.forEach(item => {
     const speed = parseFloat(item.dataset.speed);
     item.style.transform = `translateY(${scrollPosition * speed}px)`;
   });
+
+  const maxScrollForOpacity = 600;
+  const opacityValue = 1 - Math.min(scrollPosition / maxScrollForOpacity, 1);
+  heroText.style.opacity = opacityValue;
+
+  const blurValue = scrollPosition * 0.01;
+  parallaxContainer.style.filter = `blur(${blurValue}px)`;
 });
