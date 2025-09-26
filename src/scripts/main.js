@@ -15,27 +15,39 @@ const footerAccordion = () => {
 
 /** > Hero header parallax */
 const heroParallax = () => {
-  window.addEventListener('scroll', () => {
-    const parallaxContainer = document.querySelector('.parallax');
-    const parallaxItems = document.querySelectorAll('.parallax [data-speed]');
-    const heroText = document.querySelector('.parallax span');
+  const parallaxContainer = document.querySelector('.parallax');
+  const parallaxItems = document.querySelectorAll('.parallax [data-speed]');
+  const heroText = document.querySelector('.parallax span');
 
-    const scrollPosition = window.scrollY;
+  let latestScroll = 0;
+  let ticking = false;
 
+  const maxScrollForOpacity = 600;
+
+  const updateParallax = (scrollY) => {
     parallaxItems.forEach(item => {
       const speed = parseFloat(item.dataset.speed);
       const baseOffset = parseFloat(item.dataset.offset) || 0;
-      item.style.transform = `translateY(${scrollPosition * speed + baseOffset}px)`;
+      item.style.transform = `translateY(${scrollY * speed + baseOffset}px)`;
     });
 
-    const maxScrollForOpacity = 600;
-    const opacityValue = 1 - Math.min(scrollPosition / maxScrollForOpacity, 1);
-    heroText.style.opacity = opacityValue;
+    heroText.style.opacity = 1 - Math.min(scrollY / maxScrollForOpacity, 1);
+    parallaxContainer.style.filter = `blur(${scrollY * 0.01}px)`;
+  };
 
-    const blurValue = scrollPosition * 0.01;
-    parallaxContainer.style.filter = `blur(${blurValue}px)`;
+  window.addEventListener('scroll', () => {
+    latestScroll = window.scrollY;
+
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateParallax(latestScroll);
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
-}
+};
+
 
 const navTransform = () => {
   const navContainer = document.querySelector("nav");
@@ -64,12 +76,9 @@ const navTransform = () => {
   });
 };
 
-
 /** > Init all functions */
-const init = () => {
-  navTransform()
-  heroParallax()
-  footerAccordion()
-}
-
-init()
+document.addEventListener('DOMContentLoaded', () => {
+  heroParallax();
+  navTransform();
+  footerAccordion();
+});

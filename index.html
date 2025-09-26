@@ -9,7 +9,6 @@
   <!-- > MasterCSS Framework -->
   <!-- >  Performance -->
   <link rel="preload" as="script" href="https://cdn.master.co/css-runtime@rc">
-  <link rel="preload" as="style" href="https://cdn.master.co/normal.css">
 
   <!-- https://rc.css.master.co/guide/configuration -->
   <script src="src/styles/global/master.css.js"></script> <!-- CONFIG -->
@@ -28,8 +27,7 @@
 
 <body class="font-family:Lexend,sans-serif flex flex-col min-h:100vh scroll-behavior:smooth">
   <!-- > Nav -->
-  <nav
-    class="nav--initial fixed top:0 left:0 w:100% box-shadow:$(light-shadow) z-index:10 transition:background|.2s transition:transform|.3s">
+  <nav class="nav-container nav--initial fixed top:0 left:0 w:100% z-index:10">
     <div class="flex jc:space-between ai:center p:.25rem|2rem">
       <svg class="nav-logo>path w:48px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
         <path
@@ -56,15 +54,15 @@
       <source media="(max-width: 768px)" srcset="src/assets/parallax/bg-mobile.png">
       <img src="src/assets/parallax/bg.png" data-speed="0.4" alt="Plano de fundo da cidade">
     </picture>
+    <span
+      class="fixed text-wrap:nowrap fg:primary f:7.25rem top:0  content:'“'::after,::before translateY(100%) f:5.75rem@<lg f:4.75rem@<md {translateY(70%);f:3.75rem}@<sm {translateY(160%);f:3.75rem}@<xs {translateY(160%);f:3rem}@<2xs {translateY(160%);f:2.25rem}@<3xs {translateY(180%);f:1.5rem}@<4xs"
+      data-speed="1" data-offset="150">
+      O sabor da natureza
+    </span>
     <picture>
       <source media="(max-width: 768px)" srcset="src/assets/parallax/grass-mobile.png">
       <img src="src/assets/parallax/grass.png" data-speed="0.3" alt="Vegetação">
     </picture>
-    <span
-      class="fixed text-wrap:nowrap fg:primary f:7.25rem top:0 translateY(100%) content:'“'::after,::before f:5.75rem@<lg f:4.75rem@<md {translateY(70%);f:3.75rem}@<sm {translateY(160%);f:3.75rem}@<xs {translateY(160%);f:3rem}@<2xs {translateY(160%);f:2.25rem}@<3xs {translateY(180%);f:1.5rem}@<4xs"
-      data-speed="1" data-offset="150">
-      O sabor da natureza
-    </span>
     <picture>
       <source media="(max-width: 768px)" srcset="src/assets/parallax/coffe-mobile.png">
       <img src="src/assets/parallax/coffe.png" data-speed="0.3" alt="Copo de café">
@@ -80,8 +78,8 @@
     <div class="flex jc:center ai:center gap:20px mb:4.25rem display:none@<sm">
       <!-- > Card -->
       <div class="card-coffe">
-        <div class="card__image-box">
-          <img class="card__image" src="src/assets/coffe.svg" alt="" />
+        <div class="card-image-box">
+          <img class="card-image" src="src/assets/coffe.svg" alt="" />
         </div>
         <div class="flex flex-col jc:center">
           <h2 class="text-align:center fg:white">Expresso</h2>
@@ -93,8 +91,8 @@
       </div>
       <!-- > Card -->
       <div class="card-coffe">
-        <div class="card__image-box">
-          <img class="card__image" src="src/assets/coffe.svg" alt="" />
+        <div class="card-image-box">
+          <img class="card-image" src="src/assets/coffe.svg" alt="" />
         </div>
         <div class="flex flex-col jc:center">
           <h2 class="text-align:center fg:white opacity:100%">
@@ -106,8 +104,8 @@
       </div>
       <!-- > Card -->
       <div class="card-coffe">
-        <div class="card__image-box">
-          <img class="card__image" src="src/assets/coffe.svg" alt="" />
+        <div class="card-image-box">
+          <img class="card-image" src="src/assets/coffe.svg" alt="" />
         </div>
         <div class="flex flex-col jc:center">
           <h2 class="text-align:center fg:white opacity:100%">
@@ -119,8 +117,8 @@
       </div>
       <!-- > Card -->
       <div class="card-coffe">
-        <div class="card__image-box">
-          <img class="card__image" src="src/assets/coffe.svg" alt="" />
+        <div class="card-image-box">
+          <img class="card-image" src="src/assets/coffe.svg" alt="" />
         </div>
         <div class="flex flex-col jc:center">
           <h2 class="text-align:center fg:white opacity:100%">
@@ -131,7 +129,6 @@
         </div>
       </div>
     </div>
-
     <!-- > Chooseus Section -->
     <section class="grid w:60% grid-template-cols:repeat(2,1fr) w:80%@<lg {grid-template-cols:1fr;w:90%}@<sm mb:4rem">
       <img class="bg:primary w:300px h:300px {w:250px;h:250px}@<lg {w:200px;h:200px}@<md {w:150px;h:150px}@<sm" src=""
@@ -170,10 +167,7 @@
         </p>
       </div>
       <div class="grid-area:map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1838.3354789203422!2d-43.31996290556924!3d-22.851660078465546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997cbb82e26d49%3A0x48d8a33ccaea3112!2sSESI%20%2F%20SENAI%20Vicente%20de%20Carvalho!5e0!3m2!1spt-BR!2sbr!4v1758495451014!5m2!1spt-BR!2sbr"
-          style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          class="w:100% h:100% {w:50%:h:50%}@<sm"></iframe>
+
       </div>
     </section>
   </main>
