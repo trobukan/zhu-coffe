@@ -48,7 +48,6 @@ const heroParallax = () => {
   });
 };
 
-
 const navTransform = () => {
   const navContainer = document.querySelector("nav");
   const headerContainer = document.querySelector("header");
@@ -76,9 +75,24 @@ const navTransform = () => {
   });
 };
 
+const hiddenScrollElements = () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show-el");
+      }
+    })
+  })
+
+  const hiddenElements = document.querySelectorAll(".hidden-el")
+  hiddenElements.forEach((el) => observer.observe(el))
+}
+
+
 /** > Init all functions */
 document.addEventListener('DOMContentLoaded', () => {
   heroParallax();
   navTransform();
   footerAccordion();
+  hiddenScrollElements();
 });

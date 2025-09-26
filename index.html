@@ -46,7 +46,7 @@
       </ul>
     </div>
   </nav>
-  <!-- >Header Parallax -->
+  <!-- > Header Parallax -->
   <header
     class="parallax parallax-gradient rel flex jc:center ai:center height:100vh mb:10rem {mb:8rem;height:80vh}@<lg {mb:6rem;height:65vh}@<md {mb:4rem;height:60vh}@<sm 
     {mb:2rem;height:80vh}@<xs {mb:1rem;height:80vh}@<2xs {mb:1rem;height:60vh}@<3xs {.5rem;height:50vh}@<4xs overflow:hidden z-index:-2">
@@ -55,7 +55,7 @@
       <img src="src/assets/parallax/bg.png" data-speed="0.4" alt="Plano de fundo da cidade">
     </picture>
     <span
-      class="fixed text-wrap:nowrap fg:primary f:7.25rem top:0  content:'“'::after,::before translateY(100%) f:5.75rem@<lg f:4.75rem@<md {translateY(70%);f:3.75rem}@<sm {translateY(160%);f:3.75rem}@<xs {translateY(160%);f:3rem}@<2xs {translateY(160%);f:2.25rem}@<3xs {translateY(180%);f:1.5rem}@<4xs"
+      class="fixed text-wrap:nowrap fg:primary f:7.25rem top:0   content:'“'::before content:'”'::after translateY(100%) f:5.75rem@<lg f:4.75rem@<md {translateY(70%);f:3.75rem}@<sm {translateY(160%);f:3.75rem}@<xs {translateY(160%);f:3rem}@<2xs {translateY(160%);f:2.25rem}@<3xs {translateY(180%);f:1.5rem}@<4xs"
       data-speed="1" data-offset="150">
       O sabor da natureza
     </span>
@@ -75,7 +75,7 @@
   <!-- > Main Container -->
   <main class="bg:white rel flex flex-col jc:center ai:center flex-grow:1 m:0|2.25rem">
     <!-- > Card Container -->
-    <div class="flex jc:center ai:center gap:20px mb:4.25rem display:none@<sm">
+    <div class="flex jc:center ai:center gap:20px mb:4.25rem display:none@<sm hidden-el">
       <!-- > Card -->
       <div class="card-coffe">
         <div class="card-image-box">
@@ -129,8 +129,9 @@
         </div>
       </div>
     </div>
-    <!-- > Chooseus Section -->
-    <section class="grid w:60% grid-template-cols:repeat(2,1fr) w:80%@<lg {grid-template-cols:1fr;w:90%}@<sm mb:4rem">
+    <!-- > Choose Us Section -->
+    <section
+      class="grid w:60% grid-template-cols:repeat(2,1fr) w:80%@<lg {grid-template-cols:1fr;w:90%}@<sm mb:4rem hidden-el">
       <img class="bg:primary w:300px h:300px {w:250px;h:250px}@<lg {w:200px;h:200px}@<md {w:150px;h:150px}@<sm" src=""
         alt="" />
       </div>
@@ -147,9 +148,9 @@
         </p>
       </div>
     </section>
-    <!-- > Findus Section -->
+    <!-- > Find Us Section -->
     <section
-      class="grid w:60% gap:0|4.75rem grid-template-areas:$(findus-area) mb:4rem grid-template-areas:$(findus-area-mobile)@<md w:80%@<lg w:90%@<sm">
+      class="grid w:60% gap:0|4.75rem grid-template-areas:$(findus-area) mb:4rem grid-template-areas:$(findus-area-mobile)@<md w:80%@<lg w:90%@<sm hidden-el">
       <h2 class="grid-area:title">Onde nos encontrar?</h2>
       <div class="grid-area:info flex flex-col f:1rem f:.9rem@<sm">
         <p>
@@ -166,9 +167,7 @@
           E-mail: contato@zhucoffe.com.br
         </p>
       </div>
-      <div class="grid-area:map">
-
-      </div>
+      <div class="grid-area:map"></div>
     </section>
   </main>
   <!-- Footer -->
