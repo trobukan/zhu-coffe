@@ -24,7 +24,8 @@ const heroParallax = () => {
 
     parallaxItems.forEach(item => {
       const speed = parseFloat(item.dataset.speed);
-      item.style.transform = `translateY(${scrollPosition * speed}px)`;
+      const baseOffset = parseFloat(item.dataset.offset) || 0;
+      item.style.transform = `translateY(${scrollPosition * speed + baseOffset}px)`;
     });
 
     const maxScrollForOpacity = 600;
@@ -37,20 +38,32 @@ const heroParallax = () => {
 }
 
 const navTransform = () => {
-  const navContainer = document.querySelector("nav")
-  window.addEventListener("scroll", () => {
-    const scrollPosition = window.scrollY
+  const navContainer = document.querySelector("nav");
+  const headerContainer = document.querySelector("header");
 
-    if (scrollPosition >= 200) {
-      navContainer.classList.add("nav--complete")
-      navContainer.classList.remove("nav--initial")
+  let lastScroll = 0;
+
+  window.addEventListener("scroll", () => {
+    const headerHeight = headerContainer.offsetHeight;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition >= headerHeight) {
+      navContainer.classList.add("nav--complete");
+      navContainer.classList.remove("nav--initial");
     } else {
-      navContainer.classList.remove("nav--complete")
-      navContainer.classList.add("nav--initial")
+      navContainer.classList.remove("nav--complete");
+      navContainer.classList.add("nav--initial");
     }
-  }
-  )
-}
+    if (scrollPosition > lastScroll && scrollPosition) {
+      navContainer.classList.add("nav--hidden");
+    } else {
+      navContainer.classList.remove("nav--hidden");
+    }
+
+    lastScroll = scrollPosition;
+  });
+};
+
 
 /** > Init all functions */
 const init = () => {
