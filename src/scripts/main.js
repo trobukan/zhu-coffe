@@ -15,48 +15,84 @@ const footerAccordion = () => {
 
 /** > Hero header parallax */
 const heroParallax = () => {
-  window.addEventListener('scroll', () => {
-    const parallaxContainer = document.querySelector('.parallax');
-    const parallaxItems = document.querySelectorAll('.parallax [data-speed]');
-    const heroText = document.querySelector('.parallax span');
+  const parallaxContainer = document.querySelector('.parallax');
+  const parallaxItems = document.querySelectorAll('.parallax [data-speed]');
+  const heroText = document.querySelector('.parallax span');
 
-    const scrollPosition = window.scrollY;
+  let latestScroll = 0;
+  let ticking = false;
 
+  const maxScrollForOpacity = 600;
+
+  const updateParallax = (scrollY) => {
     parallaxItems.forEach(item => {
       const speed = parseFloat(item.dataset.speed);
-      item.style.transform = `translateY(${scrollPosition * speed}px)`;
+      const baseOffset = parseFloat(item.dataset.offset) || 0;
+      item.style.transform = `translateY(${scrollY * speed + baseOffset}px)`;
     });
 
-    const maxScrollForOpacity = 600;
-    const opacityValue = 1 - Math.min(scrollPosition / maxScrollForOpacity, 1);
-    heroText.style.opacity = opacityValue;
+    heroText.style.opacity = 1 - Math.min(scrollY / maxScrollForOpacity, 1);
+    parallaxContainer.style.filter = `blur(${scrollY * 0.01}px)`;
+  };
 
-    const blurValue = scrollPosition * 0.01;
-    parallaxContainer.style.filter = `blur(${blurValue}px)`;
+  window.addEventListener('scroll', () => {
+    latestScroll = window.scrollY;
+
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateParallax(latestScroll);
+        ticking = false;
+      });
+      ticking = true;
+    }
   });
-}
+};
 
 const navTransform = () => {
-  const navContainer = document.querySelector("nav")
-  window.addEventListener("scroll", () => {
-    const scrollPosition = window.scrollY
+  const navContainer = document.querySelector("nav");
+  const headerContainer = document.querySelector("header");
 
-    if (scrollPosition >= 200) {
-      navContainer.classList.add("nav--complete")
-      navContainer.classList.remove("nav--initial")
+  let lastScroll = 0;
+
+  window.addEventListener("scroll", () => {
+    const headerHeight = headerContainer.offsetHeight;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition >= headerHeight) {
+      navContainer.classList.add("nav--complete");
+      navContainer.classList.remove("nav--initial");
     } else {
-      navContainer.classList.remove("nav--complete")
-      navContainer.classList.add("nav--initial")
+      navContainer.classList.remove("nav--complete");
+      navContainer.classList.add("nav--initial");
     }
-  }
-  )
+    if (scrollPosition > lastScroll && scrollPosition) {
+      navContainer.classList.add("nav--hidden");
+    } else {
+      navContainer.classList.remove("nav--hidden");
+    }
+
+    lastScroll = scrollPosition;
+  });
+};
+
+const hiddenScrollElements = () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show-el");
+      }
+    })
+  })
+
+  const hiddenElements = document.querySelectorAll(".hidden-el")
+  hiddenElements.forEach((el) => observer.observe(el))
 }
+
 
 /** > Init all functions */
-const init = () => {
-  navTransform()
-  heroParallax()
-  footerAccordion()
-}
-
-init()
+document.addEventListener('DOMContentLoaded', () => {
+  heroParallax();
+  navTransform();
+  footerAccordion();
+  hiddenScrollElements();
+});
