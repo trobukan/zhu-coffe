@@ -15,8 +15,8 @@ window.masterCSSConfig = {
   components: {
     /** > Nav */
     "nav--hidden": "translateY(-100%)",
-    "nav--initial": "bg:transparent fg:primary_ul fill:primary_path",
-    "nav--complete": "bg:primary fg:white_ul fill:white_svg>path",
+    "nav--initial": "bg:transparent fg:primary_ul.nav-list fill:primary_path",
+    "nav--complete": "bg:white box-shadow:layered-shadow fg:primary_ul fill:primary_path",
 
     /** > Header Parallax */
     "parallax": '{abs;top:0;bottom:0;w:100%;pointer-events:none;transition:filter|.1s|ease-out}>picture {w:100%}>picture>img',

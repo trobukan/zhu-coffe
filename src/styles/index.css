@@ -1,12 +1,11 @@
 @import "global/variables.css";
 @import "global/reset.css";
 
-.parallax {
+.parallax-gradient {
   -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
 }
 
-.nav-container {
-  transition: background 200ms ease;
-  transition: transform 400ms ease;
+.nav-transitions {
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
 }
