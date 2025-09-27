@@ -88,7 +88,6 @@ const hiddenScrollElements = () => {
   hiddenElements.forEach((el) => observer.observe(el))
 }
 
-
 /** > Init all functions */
 document.addEventListener('DOMContentLoaded', () => {
   heroParallax();

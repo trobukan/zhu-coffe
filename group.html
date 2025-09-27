@@ -27,7 +27,7 @@
 
 <body class="font-family:Lexend,sans-serif flex flex-col min-h:100vh scroll-behavior:smooth">
   <!-- > Nav -->
-  <nav class="fixed top:0 left:0 w:100% z-index:10 box-shadow:layered-shadow">
+  <nav class="bg:white fixed top:0 left:0 w:100% z-index:10 box-shadow:layered-shadow">
     <div class="flex jc:space-between ai:center p:.25rem|2rem">
       <a href="/">
         <svg class="nav-logo>path w:48px h:48px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
@@ -45,29 +45,47 @@
         <li>
           <a href="group.html">Grupo</a>
         </li>
+        <li>
+          <a href="login.html">Entrar</a>
+        </li>
       </ul>
     </div>
   </nav>
   <!-- > Main Container -->
-  <main class="bg:white rel flex flex-col jc:center ai:center flex-grow:1 m:0|2.25rem">
-    <div class="bg:white p:2rem r:1rem w:90% max-w:400px box-shadow:layered-shadow">
-      <h2 class="text-align:center fg:primary mb:1rem">Entrar</h2>
-      <form class="flex flex-col gap:1rem">
-        <label class="flex flex-col">
-          <span class="mb:.25rem">E-mail</span>
-          <input type="email" required class="p:.75rem r:.5rem border:1px solid #ccc"> </label>
-        <label class="flex flex-col">
-          <span class="mb:.25rem">Senha</span> <input type="password" required
-            class="p:.75rem r:.5rem border:1px solid #ccc"> </label>
-        <button type="submit" class="btn mt:1rem">Entrar</button>
-      </form>
-      <p class="text-align:center mt:1rem f:.9rem ">
-        Não tem conta?
-        <a href="#" class="fg:primary">
-          Cadastre-se
-        </a>
-      </p>
-    </div>
+  <main class="flex flex-col jc:start ai:center flex-grow:1 mt:4rem gap:2rem">
+    <!-- Card Container -->
+    <div class="flex flex-col jc:center ai:center gap:20px">
+      <h1 class="f:2rem fg:primary text-align:center">Nosso Grupo</h1>
+      <!-- > Card -->
+      <div class="flex ai:center gap:1.5rem p:1rem border:1px|solid|#ddd r:1rem w:350px h:130px">
+        <!-- > Avatar -->
+        <img src="https://placehold.co/300x300" class="w:100px h:100px r:50%" />
+        <!-- > Info -->
+        <div class="flex flex-col">
+          <h2 class="m:0 f:1.25rem">João Vitor</h2>
+          <p class="m:0 f:1rem opacity:70%">Matrícula: 00484455</p>
+        </div>
+      </div>
+      <!-- > Card -->
+      <div class="flex ai:center gap:1.5rem p:1rem border:1px|solid|#ddd r:1rem w:350px h:130px">
+        <!-- > Avatar -->
+        <img src="https://placehold.co/300x300" class="w:100px h:100px r:50%" />
+        <!-- > Info -->
+        <div class="flex flex-col">
+          <h2 class="m:0 f:1.25rem">Patrick</h2>
+          <p class="m:0 f:1rem opacity:70%">Matrícula: ********</p>
+        </div>
+      </div>
+      <!-- > Card -->
+      <div class="flex ai:center gap:1.5rem p:1rem border:1px|solid|#ddd r:1rem w:350px h:130px ">
+        <!-- > Avatar -->
+        <img src="https://placehold.co/300x300" class="w:100px h:100px r:50%" />
+        <!-- > Info -->
+        <div class="flex flex-col">
+          <h2 class="m:0 f:1.25rem">Estevão</h2>
+          <p class="m:0 f:1rem opacity:70%">Matrícula: ********</p>
+        </div>
+      </div>
   </main>
   <!-- Footer -->
   <footer>
