@@ -38,7 +38,7 @@
         </svg>
       </a>
       <ul
-        class="nav-list flex align-items:center m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:inherit}_a fg:primary"">
+        class="nav-list flex align-items:center m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:inherit}_a fg:primary">
         <li>
           <a href="/">Início</a>
         </li>
@@ -51,22 +51,25 @@
   <!-- > Main Container -->
   <main class="bg:white rel flex flex-col jc:center ai:center flex-grow:1 m:0|2.25rem">
     <div class="bg:white p:2rem r:1rem w:90% max-w:400px box-shadow:layered-shadow">
-      <h2 class="text-align:center fg:primary mb:1rem">Entrar</h2>
+      <h2 class="text-align:center fg:primary mb:1rem">Cadastrar-se</h2>
       <form class="flex flex-col gap:1rem">
         <label class="flex flex-col">
           <span class="mb:.25rem">E-mail</span>
-          <input type="email" required class="p:.75rem r:.5rem border:1px solid #ccc"> </label>
+          <input type="email" required class="p:.75rem r:.5rem border:1px solid #ccc">
+        </label>
+
         <label class="flex flex-col">
-          <span class="mb:.25rem">Senha</span> <input type="password" required
-            class="p:.75rem r:.5rem border:1px solid #ccc"> </label>
-        <button type="submit" class="btn mt:1rem">Entrar</button>
+          <span class="mb:.25rem">Senha</span>
+          <input type="password" required class="p:.75rem r:.5rem border:1px solid #ccc">
+        </label>
+
+        <label class="flex flex-col">
+          <span class="mb:.25rem">Confirmar senha</span>
+          <input type="password" required class="p:.75rem r:.5rem border:1px solid #ccc">
+        </label>
+
+        <button type="submit" class="btn mt:1rem">Cadastrar</button>
       </form>
-      <p class="text-align:center mt:1rem f:.9rem ">
-        Não tem conta?
-        <a href="signup.html" class="fg:primary">
-          Cadastre-se
-        </a>
-      </p>
     </div>
   </main>
   <!-- Footer -->
