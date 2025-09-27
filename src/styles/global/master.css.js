@@ -14,7 +14,7 @@ window.masterCSSConfig = {
   },
   components: {
     /** > Nav */
-    "nav--hidden": "translateY(-100%)",
+    "nav--hidden": "translateY(-100%) box-shadow:none",
     "nav--initial": "bg:transparent fg:primary_ul.nav-list fill:primary_path",
     "nav--complete": "bg:white box-shadow:layered-shadow fg:primary_ul fill:primary_path",
 

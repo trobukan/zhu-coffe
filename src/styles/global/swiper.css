@@ -1,0 +1,28 @@
+.swiper {
+  width: 100%;
+  height: 380px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards-mobile {
+  display: none;
+}
+
+.cards-desktop {
+  display: flex;
+}
+
+@media(max-width:600px) {
+  .cards-mobile {
+    display: block;
+  }
+
+  .cards-desktop {
+    display: none;
+  }
+}

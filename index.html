@@ -13,8 +13,12 @@
   <!-- https://rc.css.master.co/guide/configuration -->
   <script src="src/styles/global/master.css.js"></script> <!-- CONFIG -->
   <script src="https://cdn.master.co/css-runtime@rc"></script> <!-- CDN -->
-  <!-- > JS -->
-  <script src="src/scripts/main.js" defer> </script>
+
+  <!-- > Swiper Library -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> <!-- CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script> <!-- CDN -->
+  <script type="module" src="src/scripts/swiper.js"></script> <!-- CONFIG -->
+
   <!-- > CSS  -->
   <link rel="stylesheet" href="src/styles/index.css" />
   <!-- > Fonts/Typography -->
@@ -23,25 +27,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
   <!-- > Favicon -->
   <link rel="icon" href="data:," />
+  <!-- > JS -->
+  <script src="src/scripts/footerAccordion.js" defer></script>
+  <script src="src/scripts/hiddenScrollElements.js" defer></script>
+  <script src="src/scripts/heroParallax.js" defer></script>
+  <script src="src/scripts/navTransform.js" defer></script>
+  <script src="src/scripts/islogged.js" defer></script>
 </head>
 
 <body class="font-family:Lexend,sans-serif flex flex-col min-h:100vh scroll-behavior:smooth">
   <!-- > Nav -->
   <nav class="nav--initial nav-transitions fixed top:0 left:0 w:100% z-index:10">
     <div class="flex jc:space-between ai:center p:.25rem|2rem">
-      <svg class="nav-logo>path w:48px h:48px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-        <path
-          d="M14.03 185.166a.288.288 0 0 0-.33.33l1.404 8.658c.042.256-.282.402-.445.2l-1.343-1.668a.415.415 0 0 0-.735.2l-.345 2.376h-1.67c-.43 0-.703.46-.498.839l1.372 2.53-2.333 2.016a.341.341 0 0 0 .231.6l2.512-.059.947 5.054c-1.943 1.943-1.846 1.271-1.463 2.12l2.03 3.664c1.994.041 3.665.065 5.522.036 1.858.03 3.53.006 5.525-.036l2.029-3.664c.384-.849.48-.177-1.462-2.12l.947-5.054 2.51.06c.322.007.475-.39.232-.6l-2.333-2.016 1.373-2.531a.569.569 0 0 0-.5-.84h-1.669l-.345-2.375a.415.415 0 0 0-.735-.2l-1.343 1.668c-.162.202-.486.056-.445-.2l1.404-8.658c.046-.28-.301-.449-.494-.24l-1.661 1.801a.737.737 0 0 1-1.162-.1l-.132-.205c-.148-.23-.504-.123-.5.15l.118 6.842a.933.933 0 0 1-.937.95h-.838a.933.933 0 0 1-.937-.95l.117-6.842c.005-.273-.35-.38-.498-.15l-.132.204a.737.737 0 0 1-1.162.101l-1.662-1.801a.282.282 0 0 0-.165-.09zm1.27 18.326.331.015a.685.685 0 0 1 .62.464l.555 1.638a.402.402 0 0 1-.367.53l-.245.008a.376.376 0 0 1-.37-.258l-.311-.94h-.529l-.08.947a.32.32 0 0 1-.322.292l-.308-.004a.283.283 0 0 1-.266-.368l.576-1.823a.719.719 0 0 1 .716-.501zm7.174 0a.719.719 0 0 1 .717.501l.575 1.823a.283.283 0 0 1-.266.368l-.307.004a.32.32 0 0 1-.323-.292l-.08-.948h-.529l-.31.941a.376.376 0 0 1-.37.259l-.246-.009a.402.402 0 0 1-.367-.53l.556-1.638a.685.685 0 0 1 .62-.464z"
-          style="opacity:1;fill-opacity:1;stroke:none;stroke-width:.929481;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
-          transform="matrix(4.13671 0 0 4.13671 -14.13 -757.63)" />
-      </svg>
-      <ul class="nav-list flex align-items:center m:0 gap:20px list-style:none cursor:pointer">
-        <li>Inicio</li>
-        <li>Menu</li>
+      <a href="/">
+        <svg class="nav-logo>path w:48px h:48px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+          <path class="fill:primary"
+            d="M14.03 185.166a.288.288 0 0 0-.33.33l1.404 8.658c.042.256-.282.402-.445.2l-1.343-1.668a.415.415 0 0 0-.735.2l-.345 2.376h-1.67c-.43 0-.703.46-.498.839l1.372 2.53-2.333 2.016a.341.341 0 0 0 .231.6l2.512-.059.947 5.054c-1.943 1.943-1.846 1.271-1.463 2.12l2.03 3.664c1.994.041 3.665.065 5.522.036 1.858.03 3.53.006 5.525-.036l2.029-3.664c.384-.849.48-.177-1.462-2.12l.947-5.054 2.51.06c.322.007.475-.39.232-.6l-2.333-2.016 1.373-2.531a.569.569 0 0 0-.5-.84h-1.669l-.345-2.375a.415.415 0 0 0-.735-.2l-1.343 1.668c-.162.202-.486.056-.445-.2l1.404-8.658c.046-.28-.301-.449-.494-.24l-1.661 1.801a.737.737 0 0 1-1.162-.1l-.132-.205c-.148-.23-.504-.123-.5.15l.118 6.842a.933.933 0 0 1-.937.95h-.838a.933.933 0 0 1-.937-.95l.117-6.842c.005-.273-.35-.38-.498-.15l-.132.204a.737.737 0 0 1-1.162.101l-1.662-1.801a.282.282 0 0 0-.165-.09zm1.27 18.326.331.015a.685.685 0 0 1 .62.464l.555 1.638a.402.402 0 0 1-.367.53l-.245.008a.376.376 0 0 1-.37-.258l-.311-.94h-.529l-.08.947a.32.32 0 0 1-.322.292l-.308-.004a.283.283 0 0 1-.266-.368l.576-1.823a.719.719 0 0 1 .716-.501zm7.174 0a.719.719 0 0 1 .717.501l.575 1.823a.283.283 0 0 1-.266.368l-.307.004a.32.32 0 0 1-.323-.292l-.08-.948h-.529l-.31.941a.376.376 0 0 1-.37.259l-.246-.009a.402.402 0 0 1-.367-.53l.556-1.638a.685.685 0 0 1 .62-.464z"
+            style="opacity:1;fill-opacity:1;stroke:none;stroke-width:.929481;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+            transform="matrix(4.13671 0 0 4.13671 -14.13 -757.63)" />
+        </svg>
+      </a>
+      <ul
+        class="nav-list flex align-items:center m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:inherit}_a">
         <li>
-          <a class="text-decoration:none fg:inherit" href="https://wa.me/5521978724730" target="_blank">
-            Contato
-          </a>
+          <a href="/">Início</a>
+        </li>
+        <li>
+          <a href="/group">Grupo</a>
+        </li>
+        <li class="nav-login display:block display:none.is-user">
+          <a href="/login">Entrar</a>
+        </li>
+        <li class="nav-signup display:block display:none.is-user">
+          <a href="/signup">Cadastrar</a>
+        </li>
+        <li class="nav-logout display:none display:block.is-user">
+          Sair
         </li>
       </ul>
     </div>
@@ -51,8 +72,8 @@
     class="parallax parallax-gradient rel flex jc:center ai:center height:100vh mb:10rem {mb:8rem;height:80vh}@<lg {mb:6rem;height:65vh}@<md {mb:4rem;height:60vh}@<sm 
     {mb:2rem;height:80vh}@<xs {mb:1rem;height:80vh}@<2xs {mb:1rem;height:60vh}@<3xs {.5rem;height:50vh}@<4xs overflow:hidden z-index:-2">
     <picture>
-      <source media="(max-width: 768px)" srcset="src/assets/parallax/bg-mobile.png">
-      <img src="src/assets/parallax/bg.png" data-speed="0.4" alt="Plano de fundo da cidade">
+      <source media="(max-width: 768px)" srcset="src/assets/images/parallax/bg-mobile.png">
+      <img src="src/assets/images/parallax/bg.png" data-speed="0.4" alt="Plano de fundo da cidade">
     </picture>
     <span
       class="fixed text-wrap:nowrap fg:primary f:7.25rem top:0   content:'“'::before content:'”'::after translateY(100%) f:5.75rem@<lg f:4.75rem@<md {translateY(70%);f:3.75rem}@<sm {translateY(160%);f:3.75rem}@<xs {translateY(160%);f:3rem}@<2xs {translateY(160%);f:2.25rem}@<3xs {translateY(180%);f:1.5rem}@<4xs"
@@ -60,75 +81,113 @@
       O sabor da natureza
     </span>
     <picture>
-      <source media="(max-width: 768px)" srcset="src/assets/parallax/grass-mobile.png">
-      <img src="src/assets/parallax/grass.png" data-speed="0.3" alt="Vegetação">
+      <source media="(max-width: 768px)" srcset="src/assets/images/parallax/grass-mobile.png">
+      <img src="src/assets/images/parallax/grass.png" data-speed="0.3" alt="Vegetação">
     </picture>
     <picture>
-      <source media="(max-width: 768px)" srcset="src/assets/parallax/coffe-mobile.png">
-      <img src="src/assets/parallax/coffe.png" data-speed="0.3" alt="Copo de café">
+      <source media="(max-width: 768px)" srcset="src/assets/images/parallax/coffe-mobile.png">
+      <img src="src/assets/images/parallax/coffe.png" data-speed="0.3" alt="Copo de café">
     </picture>
     <picture>
-      <source media="(max-width: 768px)" srcset="src/assets/parallax/grass-2-mobile.png">
-      <img src="src/assets/parallax/grass-2.png" data-speed="0.2" alt="Vegetação frontal">
+      <source media="(max-width: 768px)" srcset="src/assets/images/parallax/grass-2-mobile.png">
+      <img src="src/assets/images/parallax/grass-2.png" data-speed="0.2" alt="Vegetação frontal">
     </picture>
   </header>
   <!-- > Main Container -->
   <main class="bg:white rel flex flex-col jc:center ai:center flex-grow:1 m:0|2.25rem">
-    <!-- > Card Container -->
-    <div class="flex jc:center ai:center gap:20px mb:4.25rem display:none@<sm hidden-el">
-      <!-- > Card -->
+    <!-- Card Container (Desktop) -->
+    <div class="cards-desktop flex jc:center ai:center gap:20px mb:4.25rem hidden-el">
+      <!-- > Latte -->
       <div class="card-coffe">
         <div class="card-image-box">
-          <img class="card-image" src="src/assets/coffe.svg" alt="" />
+          <img class="card-image" src="src/assets/svgs/coffe.svg" alt="" />
         </div>
         <div class="flex flex-col jc:center">
-          <h2 class="text-align:center fg:white">Expresso</h2>
+          <h2 class="text-align:center fg:white">Latte</h2>
         </div>
         <div class="flex flex-col">
           <p class="fg:white">R$ 15,00</p>
           <a class="btn" href="">Adicionar ao carrinho</a>
         </div>
       </div>
-      <!-- > Card -->
+
+      <!-- > Cappuccino -->
       <div class="card-coffe">
         <div class="card-image-box">
-          <img class="card-image" src="src/assets/coffe.svg" alt="" />
+          <img class="card-image" src="src/assets/svgs/coffe.svg" alt="" />
         </div>
         <div class="flex flex-col jc:center">
-          <h2 class="text-align:center fg:white opacity:100%">
-            Latte
-          </h2>
+          <h2 class="text-align:center fg:white">Cappuccino</h2>
+        </div>
+        <div class="flex flex-col">
           <p class="fg:white">R$ 15,00</p>
           <a class="btn" href="">Adicionar ao carrinho</a>
         </div>
       </div>
-      <!-- > Card -->
+
+      <!-- > Latte -->
       <div class="card-coffe">
         <div class="card-image-box">
-          <img class="card-image" src="src/assets/coffe.svg" alt="" />
+          <img class="card-image" src="src/assets/svgs/coffe.svg" alt="" />
         </div>
         <div class="flex flex-col jc:center">
-          <h2 class="text-align:center fg:white opacity:100%">
-            Cappucinno
-          </h2>
-          <p class="fg:white">R$ 15,00</p>
-          <a class="btn" href="">Adicionar ao carrinho</a>
+          <h2 class="text-align:center fg:white">Latte</h2>
         </div>
-      </div>
-      <!-- > Card -->
-      <div class="card-coffe">
-        <div class="card-image-box">
-          <img class="card-image" src="src/assets/coffe.svg" alt="" />
-        </div>
-        <div class="flex flex-col jc:center">
-          <h2 class="text-align:center fg:white opacity:100%">
-            Mocha
-          </h2>
+        <div class="flex flex-col">
           <p class="fg:white">R$ 15,00</p>
           <a class="btn" href="">Adicionar ao carrinho</a>
         </div>
       </div>
     </div>
+
+    <!-- Card Container (Mobile Swiper) -->
+    <div class="cards-mobile swiper hidden-el">
+      <div class="swiper-wrapper">
+        <!-- > Latte -->
+        <div class="swiper-slide">
+          <div class="card-coffe">
+            <div class="card-image-box">
+              <img class="card-image" src="src/assets/svgs/coffe.svg" alt="" />
+            </div>
+            <div class="flex flex-col jc:center">
+              <h2 class="text-align:center fg:white">Latte</h2>
+              <p class="fg:white">R$ 15,00</p>
+              <a class="btn" href="">Adicionar ao carrinho</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- > Cappuccino -->
+        <div class="swiper-slide">
+          <div class="card-coffe">
+            <div class="card-image-box">
+              <img class="card-image" src="src/assets/svgs/coffe.svg" alt="" />
+            </div>
+            <div class="flex flex-col jc:center">
+              <h2 class="text-align:center fg:white">Cappuccino</h2>
+              <p class="fg:white">R$ 15,00</p>
+              <a class="btn" href="">Adicionar ao carrinho</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- > Mocha -->
+        <div class="swiper-slide">
+          <div class="card-coffe">
+            <div class="card-image-box">
+              <img class="card-image" src="src/assets/svgs/coffe.svg" alt="" />
+            </div>
+            <div class="flex flex-col jc:center">
+              <h2 class="text-align:center fg:white">Mocha</h2>
+              <p class="fg:white">R$ 15,00</p>
+              <a class="btn" href="">Adicionar ao carrinho</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
     <!-- > Choose Us Section -->
     <section
       class="grid w:60% grid-template-cols:repeat(2,1fr) w:80%@<lg {grid-template-cols:1fr;w:90%}@<sm mb:4rem hidden-el">
@@ -178,10 +237,9 @@
       <div class="accordion">
         <div class="accordion-header">
           <span>Produtos</span>
-          <img src="src/assets/arrow-up.svg" class="accordion-icon" />
+          <img src="src/assets/svgs/arrow-up.svg" class="accordion-icon" />
         </div>
         <ul class="accordion-content accordion-collapsed list">
-          <li><a href="#/">Expresso</a></li>
           <li><a href="#/">Latte</a></li>
           <li><a href="#/">Cappucino</a></li>
           <li><a href="#/">Mocha</a></li>
@@ -191,7 +249,7 @@
       <div class="accordion">
         <div class="accordion-header">
           <span>Empresa</span>
-          <img src="src/assets/arrow-up.svg" class="accordion-icon" />
+          <img src="src/assets/svgs/arrow-up.svg" class="accordion-icon" />
         </div>
         <ul class="accordion-content accordion-collapsed list">
           <li><a href="#/">Sobre Nós</a></li>
@@ -203,7 +261,7 @@
       <div class="accordion">
         <div class="accordion-header">
           <span>Redes Sociais</span>
-          <img src="src/assets/arrow-up.svg" class="accordion-icon" />
+          <img src="src/assets/svgs/arrow-up.svg" class="accordion-icon" />
         </div>
         <ul class="accordion-content accordion-collapsed list">
           <li><a href="#/">Instagram</a></li>
