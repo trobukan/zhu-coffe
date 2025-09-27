@@ -40,7 +40,7 @@
       <ul
         class="nav-list flex align-items:center m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:inherit}_a fg:primary"">
         <li>
-          <a href="/">Início</a>
+          <a href=" /">Início</a>
         </li>
         <li>
           <a href="group.html">Grupo</a>
@@ -52,13 +52,13 @@
   <main class="bg:white rel flex flex-col jc:center ai:center flex-grow:1 m:0|2.25rem">
     <div class="bg:white p:2rem r:1rem w:90% max-w:400px box-shadow:layered-shadow">
       <h2 class="text-align:center fg:primary mb:1rem">Entrar</h2>
-      <form class="flex flex-col gap:1rem">
-        <label class="flex flex-col">
-          <span class="mb:.25rem">E-mail</span>
-          <input type="email" required class="p:.75rem r:.5rem border:1px solid #ccc"> </label>
-        <label class="flex flex-col">
-          <span class="mb:.25rem">Senha</span> <input type="password" required
-            class="p:.75rem r:.5rem border:1px solid #ccc"> </label>
+      <form method="post" class="flex flex-col gap:1rem">
+        <label for="email">E-mail</label>
+        <input type="email" name="email" required class="p:.75rem r:.5rem border:1px|solid|#ccc">
+
+        <label for="password">Senha</label>
+        <input type="password" name="password" required class="p:.75rem r:.5rem border:1px|solid|#ccc">
+
         <button type="submit" class="btn mt:1rem">Entrar</button>
       </form>
       <p class="text-align:center mt:1rem f:.9rem ">

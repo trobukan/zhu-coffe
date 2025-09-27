@@ -53,20 +53,14 @@
     <div class="bg:white p:2rem r:1rem w:90% max-w:400px box-shadow:layered-shadow">
       <h2 class="text-align:center fg:primary mb:1rem">Cadastrar-se</h2>
       <form class="flex flex-col gap:1rem">
-        <label class="flex flex-col">
-          <span class="mb:.25rem">E-mail</span>
-          <input type="email" required class="p:.75rem r:.5rem border:1px solid #ccc">
-        </label>
+        <label for="email">E-mail</label>
+        <input type="email" name="email" required class="p:.75rem r:.5rem border:1px|solid|#ccc">
 
-        <label class="flex flex-col">
-          <span class="mb:.25rem">Senha</span>
-          <input type="password" required class="p:.75rem r:.5rem border:1px solid #ccc">
-        </label>
+        <label for="password">Senha</label>
+        <input type="password" required class="p:.75rem r:.5rem border:1px|solid|#ccc">
 
-        <label class="flex flex-col">
-          <span class="mb:.25rem">Confirmar senha</span>
-          <input type="password" required class="p:.75rem r:.5rem border:1px solid #ccc">
-        </label>
+        <label for="confirm-password">Confirmar senha</label>
+        <input type="password" name="confirm-password" required class="p:.75rem r:.5rem border:1px|solid|#ccc">
 
         <button type="submit" class="btn mt:1rem">Cadastrar</button>
       </form>
