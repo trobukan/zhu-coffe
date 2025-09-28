@@ -26,6 +26,7 @@
   <!-- > JS -->
   <script src="src/scripts/footerAccordion.js" defer></script>
   <script src="src/scripts/hiddenScrollElements.js" defer></script>
+  <script src="src/scripts/isLogged.js" defer></script>
 </head>
 
 <body class="font-family:Lexend,sans-serif flex flex-col min-h:100vh scroll-behavior:smooth">
@@ -41,18 +42,21 @@
         </svg>
       </a>
       <ul
-        class="nav-list flex align-items:center m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:inherit}_a fg:primary">
+        class="flex align-items:center m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:primary}_a fg:primary_li">
         <li>
           <a href="/">Início</a>
         </li>
         <li>
           <a href="/group">Grupo</a>
         </li>
-        <li>
+        <li class="nav-login display:block display:none.is-user">
           <a href="/login">Entrar</a>
         </li>
-        <li>
+        <li class="nav-signup display:block display:none.is-user">
           <a href="/signup">Cadastrar</a>
+        </li>
+        <li class="nav-logout display:none display:block.is-user">
+          Sair
         </li>
       </ul>
     </div>
