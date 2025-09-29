@@ -1,4 +1,9 @@
 :root {
   --findus-area: "title title" "info map";
   --findus-area-mobile: "title" "info" "map";
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
 }
