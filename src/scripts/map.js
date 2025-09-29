@@ -74,7 +74,6 @@ const COLORS = {
   NO_UNITS: '#6b7280'
 };
 
-
 const getStateLocations = (stateCode) => cafes.filter(cafe => cafe.state === stateCode);
 const hasLocations = (stateCode) => getStateLocations(stateCode).length > 0;
 
