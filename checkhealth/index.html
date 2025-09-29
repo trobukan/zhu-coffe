@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/" />
+
+  <meta charset="UTF-8">
+  <title>Check Health</title>
+  <link rel="stylesheet" href="src/styles/index.css">
+
+  <script src="src/styles/global/master.css.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.master.co/css-runtime@rc"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+
+  <link rel="icon" href="data:," />
+  <style>
+    body {
+      padding: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: .5rem;
+      padding: .5rem 1rem;
+      border-radius: .5rem;
+    }
+
+    .ok {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .fail {
+      background: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Health Check</h1>
+  <ul id="status"></ul>
+
+  <script type="module">
+    const statusEl = document.getElementById("status");
+
+    function addStatus(name, ok) {
+      const li = document.createElement("li");
+      li.textContent = name + ": " + (ok ? "OK" : "FAIL");
+      li.className = ok ? "ok" : "fail";
+      statusEl.appendChild(li);
+    }
+
+    const isLogged = localStorage.getItem("isLogged");
+    addStatus("User Logged", !!isLogged);
+
+    addStatus("JavaScript", true);
+
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
+      .then(() => addStatus("API", true))
+      .catch(() => addStatus("API", false));
+
+    try {
+      if (window.masterCSSConfig) {
+        addStatus("MasterCSS loaded", true);
+      } else {
+        addStatus("MasterCSS loaded", false);
+      }
+    } catch (e) {
+      addStatus("MasterCSS loaded", false);
+    }
+
+    try {
+      if (window.Swiper) {
+        addStatus("Swiper JS loaded", true);
+      } else {
+        addStatus("Swiper JS loaded", false);
+      }
+    } catch (e) {
+      addStatus("Swiper JS loaded", false);
+    }
+
+  </script>
+</body>
+
+</html>
