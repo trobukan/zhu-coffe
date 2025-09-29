@@ -33,6 +33,7 @@
   <script src="src/scripts/heroParallax.js" defer></script>
   <script src="src/scripts/navTransform.js" defer></script>
   <script src="src/scripts/isLogged.js" defer></script>
+  <script src="src/scripts/map.js" defer></script>
 </head>
 
 <body class="font-family:Lexend,sans-serif flex flex-col min-h:100vh scroll-behavior:smooth">
@@ -209,24 +210,14 @@
     </section>
     <!-- > Find Us Section -->
     <section
-      class="grid w:60% gap:0|4.75rem grid-template-areas:$(findus-area) mb:4rem grid-template-areas:$(findus-area-mobile)@<md w:80%@<lg w:90%@<sm hidden-el">
-      <h2 class="grid-area:title">Onde nos encontrar?</h2>
-      <div class="grid-area:info flex flex-col f:1rem f:.9rem@<sm">
-        <p>
-          Av. Pastor Martin Luther King Jr., 6475<br />
-          Rio de Janeiro - RJ
-        </p>
-        <p>
-          Segunda a Sexta: 8h às 18h<br />
-          Sábado: 9h às 14h<br />
-          Domingo: Fechado
-        </p>
-        <p>
-          Telefone: (21) 97872-4730<br />
-          E-mail: contato@zhucoffe.com.br
-        </p>
+      class="grid grid-template-cols:2fr|1fr {grid-template-cols:1fr}@<sm gap:20px w:60% mb:4rem w:80%@<lg w:90%@<sm hidden-el">
+      <!-- > Brazil MAP -->
+      <div class="box-shadow:layered-shadow r:0.5rem">
+        <svg class="stroke:#fff r:0.5rem w:100% h:100%" viewBox="0 0 700 600" id="brazil-map"></svg>
       </div>
-      <div class="grid-area:map"></div>
+
+      <!-- Side Card -->
+      <div id="info" class="bg:white gap:1rem r:0.5rem"> </div>
     </section>
   </main>
   <!-- Footer -->
@@ -270,6 +261,8 @@
       </div>
     </div>
   </footer>
+
+  
 </body>
 
 </html>

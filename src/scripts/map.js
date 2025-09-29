@@ -55,34 +55,31 @@ const brazilStates = {
 };
 
 const cafes = [
-  { id: 1, name: 'Café Paulista', city: 'São Paulo', state: 'SP', address: 'Rua Augusta, 123', phone: '(11) 1234-5678', hours: '7:00 - 22:00' },
-  { id: 2, name: 'Café Carioca', city: 'Rio de Janeiro', state: 'RJ', address: 'Av. Copacabana, 456', phone: '(21) 2345-6789', hours: '6:30 - 23:00' },
-  { id: 3, name: 'Café Mineiro', city: 'Belo Horizonte', state: 'MG', address: 'Rua da Bahia, 789', phone: '(31) 3456-7890', hours: '6:00 - 21:00' },
-  { id: 4, name: 'Café Gaúcho', city: 'Porto Alegre', state: 'RS', address: 'Rua dos Andradas, 321', phone: '(51) 4567-8901', hours: '7:30 - 20:00' },
-  { id: 5, name: 'Café Baiano', city: 'Salvador', state: 'BA', address: 'Pelourinho, 654', phone: '(71) 5678-9012', hours: '8:00 - 22:00' }
+  { id: 1, name: 'Cafeteria', city: 'São Paulo', state: 'SP', address: 'Rua, 123', phone: '(11) ****-****', hours: '7:00 - 22:00' },
+  { id: 2, name: 'Cafeteria', city: 'Rio de Janeiro', state: 'RJ', address: 'Av. , 456', phone: '(21) ****-****', hours: '6:30 - 23:00' },
+  { id: 3, name: 'Cafeteria', city: 'Belo Horizonte', state: 'MG', address: 'Rua, 789', phone: '(31) ****-****', hours: '6:00 - 21:00' },
+  { id: 4, name: 'Cafeteria', city: 'Porto Alegre', state: 'RS', address: 'Rua , 321', phone: '(51) ****-****', hours: '7:30 - 20:00' },
+  { id: 5, name: 'Cafeteria', city: 'Salvador', state: 'BA', address: 'Av., 654', phone: '(71) ****-****', hours: '8:00 - 22:00' },
+  { id: 6, name: 'Cafeteria', city: 'São Paulo', state: 'SP', address: 'Rua, 123', phone: '(11) ****-****', hours: '7:00 - 22:00' },
 ];
 
 let selectedState = null;
-let hoveredState = null;
 
 const svg = document.getElementById('brazil-map');
 const info = document.getElementById("info");
-const tooltip = document.getElementById('tooltip');
 
 const COLORS = {
   UNITS: '#059669',
   SELECTED: '#dc2626',
-  HOVER: '#ea580c',
   NO_UNITS: '#6b7280'
 };
 
-// === FUNÇÕES DE LÓGICA ===
+
 const getStateLocations = (stateCode) => cafes.filter(cafe => cafe.state === stateCode);
 const hasLocations = (stateCode) => getStateLocations(stateCode).length > 0;
 
 const getStateColor = (code) => {
   if (selectedState === code) return COLORS.SELECTED;
-  if (hoveredState === code) return COLORS.HOVER;
   if (hasLocations(code)) return COLORS.UNITS;
   return COLORS.NO_UNITS;
 };
@@ -92,20 +89,6 @@ const handleStateClick = (stateCode) => {
   renderAll();
 };
 
-// === FUNÇÕES DO TOOLTIP (Hover) ===
-const showTooltip = (content, event) => {
-  tooltip.innerHTML = content;
-  tooltip.style.opacity = '1';
-  // Posiciona o tooltip
-  tooltip.style.left = `${event.pageX + 10}px`;
-  tooltip.style.top = `${event.pageY + 10}px`;
-};
-
-const hideTooltip = () => {
-  tooltip.style.opacity = '0';
-};
-
-
 const createMapSvg = () => {
   svg.innerHTML = '';
 
@@ -113,34 +96,10 @@ const createMapSvg = () => {
     const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     path.setAttribute('d', state.path);
     path.setAttribute("fill", getStateColor(code));
-    // Estilos MasterCSS inline (para cores dinâmicas) e classes
-    path.className = "cursor:pointer transition:all|0.2s stroke:#fff stroke-width:0.3 stroke-width:0.5:hover";
+    path.classList.add("cursor:pointer", "transition:all|0.2s", "stroke:#fff", "stroke-width:0.3", "stroke-width:0.5:hover", "fill:#ea580c:hover");
     path.setAttribute('title', state.name);
 
-    // Eventos
     path.addEventListener('click', () => handleStateClick(code));
-
-    path.addEventListener('mouseenter', (e) => {
-      hoveredState = code;
-      renderMapOnly();
-      const count = getStateLocations(code).length;
-      const content = `
-                <div class="f:0.9rem text:center">
-                    <p class="font-weight:600 m:0">${state.name}</p>
-                    <p class="f:0.8rem color:#a1a1aa m:0">
-                        ${count > 0 ? `${count} cafeteria(s)` : 'Em breve'}
-                    </p>
-                </div>
-            `;
-      showTooltip(content, e);
-    });
-
-    path.addEventListener('mouseleave', () => {
-      hoveredState = null;
-      renderMapOnly();
-      hideTooltip();
-    });
-
     svg.appendChild(path);
   });
 };
@@ -155,7 +114,7 @@ const createLocationsPanel = () => {
     const selectedStateLocations = getStateLocations(selectedState);
 
     let html = `
-            <div class="flex gap:10px color:var$(--mapa-selecionado)">
+            <div class="flex gap:10px">
                 <img class="w:20px" src="src/assets/svgs/location.svg" alt="">
                 <h4 class="font-weight:500 color:#000">${stateName}</h4>
             </div>
@@ -219,7 +178,6 @@ const createLocationsPanel = () => {
             </div>
         `;
 
-    // Adiciona eventos de clique às badges (para estados sem seleção)
     panelContainer.querySelectorAll('.badge-link').forEach(badge => {
       badge.addEventListener('click', () => {
         const code = badge.getAttribute('data-state-code');
@@ -229,10 +187,6 @@ const createLocationsPanel = () => {
   }
 
   info.appendChild(panelContainer);
-};
-
-const renderMapOnly = () => {
-  createMapSvg();
 };
 
 const renderAll = () => {
