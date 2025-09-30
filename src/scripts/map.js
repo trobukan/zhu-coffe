@@ -164,7 +164,7 @@ const createLocationsPanel = () => {
                 <img class="w:20px" src="src/assets/svgs/local-cafe.svg" alt="">
                 <h4 class="font-weight:500">Nossas Cafeterias</h4>
             </div>
-            <div class="flex flex-col jc:center ai:center color:#64748b p:1rem|0">
+            <div class="flex flex-col jc:center ai:center opacity:60% p:1rem|0">
                 <img class="w:48px m:0" src="src/assets/svgs/location.svg" alt="">
                 <p class="f:1rem m:0.25rem|0|0.5rem|0">Selecione um estado no mapa</p>
                 <p class="f:0.8rem m:0">para ver nossas unidades</p>

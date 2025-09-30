@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
   <!-- > Favicon -->
-  <link rel="icon" href="data:," />
+  <link rel="icon" href="src/assets/favicon/logo.svg" />
   <!-- > JS -->
   <script src="src/scripts/footerAccordion.js" defer></script>
   <script src="src/scripts/hiddenScrollElements.js" defer></script>
@@ -35,7 +35,7 @@
   <nav class="fixed top:0 left:0 w:100% z-index:10 box-shadow:layered-shadow">
     <div class="flex jc:space-between ai:center p:.25rem|2rem">
       <a href="/">
-        <svg class="nav-logo>path w:48px h:48px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+        <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
           <path class="fill:primary"
             d="M14.03 185.166a.288.288 0 0 0-.33.33l1.404 8.658c.042.256-.282.402-.445.2l-1.343-1.668a.415.415 0 0 0-.735.2l-.345 2.376h-1.67c-.43 0-.703.46-.498.839l1.372 2.53-2.333 2.016a.341.341 0 0 0 .231.6l2.512-.059.947 5.054c-1.943 1.943-1.846 1.271-1.463 2.12l2.03 3.664c1.994.041 3.665.065 5.522.036 1.858.03 3.53.006 5.525-.036l2.029-3.664c.384-.849.48-.177-1.462-2.12l.947-5.054 2.51.06c.322.007.475-.39.232-.6l-2.333-2.016 1.373-2.531a.569.569 0 0 0-.5-.84h-1.669l-.345-2.375a.415.415 0 0 0-.735-.2l-1.343 1.668c-.162.202-.486.056-.445-.2l1.404-8.658c.046-.28-.301-.449-.494-.24l-1.661 1.801a.737.737 0 0 1-1.162-.1l-.132-.205c-.148-.23-.504-.123-.5.15l.118 6.842a.933.933 0 0 1-.937.95h-.838a.933.933 0 0 1-.937-.95l.117-6.842c.005-.273-.35-.38-.498-.15l-.132.204a.737.737 0 0 1-1.162.101l-1.662-1.801a.282.282 0 0 0-.165-.09zm1.27 18.326.331.015a.685.685 0 0 1 .62.464l.555 1.638a.402.402 0 0 1-.367.53l-.245.008a.376.376 0 0 1-.37-.258l-.311-.94h-.529l-.08.947a.32.32 0 0 1-.322.292l-.308-.004a.283.283 0 0 1-.266-.368l.576-1.823a.719.719 0 0 1 .716-.501zm7.174 0a.719.719 0 0 1 .717.501l.575 1.823a.283.283 0 0 1-.266.368l-.307.004a.32.32 0 0 1-.323-.292l-.08-.948h-.529l-.31.941a.376.376 0 0 1-.37.259l-.246-.009a.402.402 0 0 1-.367-.53l.556-1.638a.685.685 0 0 1 .62-.464z"
             style="opacity:1;fill-opacity:1;stroke:none;stroke-width:.929481;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
@@ -43,12 +43,12 @@
         </svg>
       </a>
       <ul
-        class="nav-list flex align-items:center m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:inherit}_a fg:primary">
+        class="nav-list-container nav-list flex align-items:center m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:inherit}_a fg:primary">
         <li>
           <a href="/">Início</a>
         </li>
         <li>
-          <a href="/group">Grupo</a>
+          <a href="/grupo/">Grupo</a>
         </li>
       </ul>
     </div>
@@ -85,9 +85,9 @@
           <img src="src/assets/svgs/arrow-up.svg" class="accordion-icon" />
         </div>
         <ul class="accordion-content accordion-collapsed list">
-          <li><a href="#/">Latte</a></li>
-          <li><a href="#/">Cappucino</a></li>
-          <li><a href="#/">Mocha</a></li>
+          <li><a href="/cafes/latte/">Latte</a></li>
+          <li><a href="/cafes/cappuccino/">Cappucino</a></li>
+          <li><a href="/cafes/mocha/">Mocha</a></li>
         </ul>
       </div>
       <!-- Empresa -->

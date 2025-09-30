@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <base href="/" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zhu Coffe</title>
+
+  <!-- > MasterCSS Framework -->
+  <!-- >  Performance -->
+  <link rel="preload" as="script" href="https://cdn.master.co/css-runtime@rc">
+
+  <!-- https://rc.css.master.co/guide/configuration -->
+  <script src="src/styles/global/master.css.js"></script> <!-- CONFIG -->
+  <script src="https://cdn.master.co/css-runtime@rc"></script> <!-- CDN -->
+
+  <!-- > Swiper Library -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> <!-- CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script> <!-- CDN -->
+  <script type="module" src="src/scripts/swiper.js"></script> <!-- CONFIG -->
+
+  <!-- > CSS  -->
+  <link rel="stylesheet" href="src/styles/index.css" />
+  <!-- > Fonts/Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+  <!-- > Favicon -->
+  <link rel="icon" href="src/assets/favicon/logo.svg" />
+  <!-- > JS -->
+  <script src="src/scripts/footerAccordion.js" defer></script>
+  <script src="src/scripts/hiddenScrollElements.js" defer></script>
+  <script src="src/scripts/isLogged.js" defer></script>
+</head>
+
+<body class="font-family:Lexend,sans-serif flex flex-col min-h:100vh scroll-behavior:smooth">
+  <nav class="fixed top:0 left:0 w:100% z-index:10 box-shadow:layered-shadow bg:white">
+    <div class="flex jc:space-between ai:center p:.25rem|2rem">
+      <a href="/">
+        <svg class="nav-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+          <path class="fill:primary"
+            d="M14.03 185.166a.288.288 0 0 0-.33.33l1.404 8.658c.042.256-.282.402-.445.2l-1.343-1.668a.415.415 0 0 0-.735.2l-.345 2.376h-1.67c-.43 0-.703.46-.498.839l1.372 2.53-2.333 2.016a.341.341 0 0 0 .231.6l2.512-.059.947 5.054c-1.943 1.943-1.846 1.271-1.463 2.12l2.03 3.664c1.994.041 3.665.065 5.522.036 1.858.03 3.53.006 5.525-.036l2.029-3.664c.384-.849.48-.177-1.462-2.12l.947-5.054 2.51.06c.322.007.475-.39.232-.6l-2.333-2.016 1.373-2.531a.569.569 0 0 0-.5-.84h-1.669l-.345-2.375a.415.415 0 0 0-.735-.2l-1.343 1.668c-.162.202-.486.056-.445-.2l1.404-8.658c.046-.28-.301-.449-.494-.24l-1.661 1.801a.737.737 0 0 1-1.162-.1l-.132-.205c-.148-.23-.504-.123-.5.15l.118 6.842a.933.933 0 0 1-.937.95h-.838a.933.933 0 0 1-.937-.95l.117-6.842c.005-.273-.35-.38-.498-.15l-.132.204a.737.737 0 0 1-1.162.101l-1.662-1.801a.282.282 0 0 0-.165-.09zm1.27 18.326.331.015a.685.685 0 0 1 .62.464l.555 1.638a.402.402 0 0 1-.367.53l-.245.008a.376.376 0 0 1-.37-.258l-.311-.94h-.529l-.08.947a.32.32 0 0 1-.322.292l-.308-.004a.283.283 0 0 1-.266-.368l.576-1.823a.719.719 0 0 1 .716-.501zm7.174 0a.719.719 0 0 1 .717.501l.575 1.823a.283.283 0 0 1-.266.368l-.307.004a.32.32 0 0 1-.323-.292l-.08-.948h-.529l-.31.941a.376.376 0 0 1-.37.259l-.246-.009a.402.402 0 0 1-.367-.53l.556-1.638a.685.685 0 0 1 .62-.464z"
+            style="opacity:1;fill-opacity:1;stroke:none;stroke-width:.929481;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+            transform="matrix(4.13671 0 0 4.13671 -14.13 -757.63)" />
+        </svg>
+      </a>
+      <ul
+        class="nav-list-container flex align-items:center m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:primary}_a fg:primary_li">
+        <li>
+          <a href="/">Início</a>
+        </li>
+        <li>
+          <a href="/grupo/">Grupo</a>
+        </li>
+        <li class="nav-login display:block display:none.is-user">
+          <a href="/entrar/">Entrar</a>
+        </li>
+        <li class="nav-signup display:block display:none.is-user">
+          <a href="/cadastrar/">Cadastrar</a>
+        </li>
+        <li class="nav-logout display:none display:block.is-user">
+          Sair
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- > Main Container -->
+  <main class="flex flex-col jc:start ai:center flex-grow:1 m:6rem|4rem gap:4rem">
+
+    <!-- > Product -->
+    <div
+      class="product-grid grid grid-cols:2 grid-cols:1@<sm gap:4rem gap:0.75rem@<sm box-shadow:layered-shadow p:2rem r:0.25rem">
+      <!-- > Product Image -->
+      <section class="flex ai:center jc:center">
+        <div class="w:100% flex ai:center jc:center {;jc:start;p:0rem}@<sm">
+          <img src="/src/assets/svgs/coffe.svg" alt="Latte" class="w:280px w:170px@<sm" />
+        </div>
+      </section>
+      <!-- > Product Info -->
+      <section class="flex flex-col gap:0.75rem  gap:0@<sm">
+        <h1 class="font:2rem mb:0.5rem font-weight:700">Latte</h1>
+        <p class="font:1.25rem font-weight:600 fg:#0a5">R$ 15,00</p>
+
+        <p class="line-height:1.6 opacity:80% font:md">
+          Um clássico Latte feito com café espresso encorpado, leite vaporizado
+          e uma fina camada de espuma cremosa no topo.
+          Perfeito para quem gosta de suavidade sem perder a intensidade do café.
+        </p>
+
+        <!-- Purchase Controls -->
+        <div class="flex ai:center gap:2rem">
+          <button class="bg:primary fg:white p:1rem|2rem font-weight:600 r:0.25rem  border:none">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Other Coffes -->
+    <section id="produtos" class="text:center">
+      <h2 class="font:2rem font-weight:700 mb:1rem">Outros cafes</h2>
+      <div class="grid grid-cols:2  gap:2rem">
+        <div class="p:1.5rem border:1px_solid_#eee r:0.5rem flex flex-col ai:center">
+          <img src="/src/assets/svgs/coffe.svg" alt="Cappuccino" class="w:140px w:100@<sm" />
+          <h3 class="font:1.25rem font-weight:600">Cappuccino</h3>
+          <p class="fg:#0a5 font-weight:600 m:0">R$ 15,00</p>
+        </div>
+
+        <div class="p:1.5rem border:1px_solid_#eee r:0.5rem flex flex-col ai:center">
+          <img src="/src/assets/svgs/coffe.svg" alt="Mocha" class="w:140px w:100px@<sm" />
+          <h3 class="font:1.25rem font-weight:600">Mocha</h3>
+          <p class="fg:#0a5 font-weight:600 m:0">R$ 15,00</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- > Footer -->
+  <footer>
+    <div
+      class="bg:primary p:1rem|2rem grid place-items:center grid-template-cols:repeat(3,1fr) grid-template-cols:1fr@<sm gap:1rem ">
+      <!-- Produtos -->
+      <div class="accordion">
+        <div class="accordion-header">
+          <span>Produtos</span>
+          <img src="src/assets/svgs/arrow-up.svg" class="accordion-icon" />
+        </div>
+        <ul class="accordion-content accordion-collapsed list">
+          <li><a href="/cafes/latte/">Latte</a></li>
+          <li><a href="/cafes/cappuccino/">Cappucino</a></li>
+          <li><a href="/cafes/mocha/">Mocha</a></li>
+        </ul>
+      </div>
+      <!-- Empresa -->
+      <div class="accordion">
+        <div class="accordion-header">
+          <span>Empresa</span>
+          <img src="src/assets/svgs/arrow-up.svg" class="accordion-icon" />
+        </div>
+        <ul class="accordion-content accordion-collapsed list">
+          <li><a href="#/">Sobre Nós</a></li>
+          <li><a href="#/">Contatos</a></li>
+          <li><a href="#/">Suporte</a></li>
+        </ul>
+      </div>
+      <!-- Redes Sociais -->
+      <div class="accordion">
+        <div class="accordion-header">
+          <span>Redes Sociais</span>
+          <img src="src/assets/svgs/arrow-up.svg" class="accordion-icon" />
+        </div>
+        <ul class="accordion-content accordion-collapsed list">
+          <li><a href="#/">Instagram</a></li>
+          <li><a href="https://github.com/trobukan/zhu-coffe">Github</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
