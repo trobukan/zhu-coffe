@@ -1,0 +1,7 @@
+:root {
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
