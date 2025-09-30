@@ -15,6 +15,12 @@
   <!-- https://rc.css.master.co/guide/configuration -->
   <script src="src/styles/global/master.css.js"></script> <!-- CONFIG -->
   <script src="https://cdn.master.co/css-runtime@rc"></script> <!-- CDN -->
+
+  <!-- > Swiper Library -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> <!-- CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script> <!-- CDN -->
+  <script type="module" src="src/scripts/swiper.js"></script> <!-- CONFIG -->
+
   <!-- > CSS  -->
   <link rel="stylesheet" href="src/styles/index.css" />
   <!-- > Fonts/Typography -->
@@ -26,13 +32,11 @@
   <!-- > JS -->
   <script src="src/scripts/footerAccordion.js" defer></script>
   <script src="src/scripts/hiddenScrollElements.js" defer></script>
-  <script src="src/scripts/login.js" defer></script>
   <script src="src/scripts/isLogged.js" defer></script>
 </head>
 
 <body class="font-family:Lexend,sans-serif flex flex-col min-h:100vh scroll-behavior:smooth">
-  <!-- > Nav -->
-  <nav class="fixed top:0 left:0 w:100% z-index:10 box-shadow:layered-shadow">
+  <nav class="fixed top:0 left:0 w:100% z-index:10 box-shadow:layered-shadow bg:white">
     <div class="flex jc:space-between ai:center p:.25rem|2rem">
       <a href="/">
         <svg class="nav-logo>path w:48px h:48px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
@@ -43,38 +47,76 @@
         </svg>
       </a>
       <ul
-        class="nav-list flex align-items:center m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:inherit}_a fg:primary">
+        class="flex align-items:center m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:primary}_a fg:primary_li">
         <li>
           <a href="/">Início</a>
         </li>
         <li>
           <a href="/grupo/">Grupo</a>
         </li>
+        <li class="nav-login display:block display:none.is-user">
+          <a href="/entrar/">Entrar</a>
+        </li>
+        <li class="nav-signup display:block display:none.is-user">
+          <a href="/cadastrar/">Cadastrar</a>
+        </li>
+        <li class="nav-logout display:none display:block.is-user">
+          Sair
+        </li>
       </ul>
     </div>
   </nav>
+
   <!-- > Main Container -->
-  <main class="bg:white rel flex flex-col jc:center ai:center flex-grow:1 m:0|2.25rem">
-    <div class="bg:white p:2rem r:1rem w:90% max-w:400px box-shadow:layered-shadow">
-      <h2 class="text-align:center fg:primary mb:1rem">Entrar</h2>
-      <form class="flex flex-col gap:1rem">
-        <label for="email">E-mail</label>
-        <input type="email" name="email" required class="p:.75rem r:.5rem border:1px|solid|#ccc">
+  <main class="flex flex-col jc:start ai:center flex-grow:1 m:6rem|4rem gap:4rem">
 
-        <label for="password">Senha</label>
-        <input type="password" name="password" required class="p:.75rem r:.5rem border:1px|solid|#ccc">
+    <div class="product-grid grid grid-cols:2 grid-cols:1@<sm gap:4rem gap:0.75rem@<sm">
+      <!-- > Product Image -->
+      <section class="flex ai:center jc:center">
+        <div class="w:100% flex ai:center jc:center {;jc:start;p:0rem}@<sm">
+          <img src="/src/assets/svgs/coffe.svg" alt="Latte" class="w:280px w:170px@<sm" />
+        </div>
+      </section>
+      <!-- > Product Info -->
+      <section class="product-info flex flex-col gap:0.75rem gap:0@<sm">
+        <h1 class="product-title font:2rem mb:0.5rem font-weight:700">Latte</h1>
+        <p class="product-price font:1.25rem font-weight:600 fg:#0a5">R$ 15,00</p>
 
-        <button type="submit" class="btn mt:1rem">Entrar</button>
-      </form>
-      <p class="text-align:center mt:1rem f:.9rem ">
-        Não tem conta?
-        <a href="/signup" class="fg:primary">
-          Cadastre-se
-        </a>
-      </p>
+        <p class="line-height:1.6 opacity:80% font:md">
+          Um clássico Latte feito com café espresso encorpado, leite vaporizado
+          e uma fina camada de espuma cremosa no topo.
+          Perfeito para quem gosta de suavidade sem perder a intensidade do café.
+        </p>
+
+        <!-- Purchase Controls -->
+        <div class="flex ai:center gap:2rem">
+          <button class="bg:primary fg:white p:1rem|2rem font-weight:600 r:0.25rem  border:none">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </section>
     </div>
+
+    <!-- Other Coffes -->
+    <section id="produtos" class="text:center">
+      <h2 class="font:2rem font-weight:700 mb:1rem">Outros cafes</h2>
+      <div class="grid grid-cols:2  gap:2rem">
+        <div class="p:1.5rem border:1px_solid_#eee r:0.5rem flex flex-col ai:center">
+          <img src="/src/assets/svgs/coffe.svg" alt="Cappuccino" class="w:140px w:100@<sm" />
+          <h3 class="font:1.25rem font-weight:600">Cappuccino</h3>
+          <p class="fg:#0a5 font-weight:600 m:0">R$ 15,00</p>
+        </div>
+
+        <div class="p:1.5rem border:1px_solid_#eee r:0.5rem flex flex-col ai:center">
+          <img src="/src/assets/svgs/coffe.svg" alt="Mocha" class="w:140px w:100px@<sm" />
+          <h3 class="font:1.25rem font-weight:600">Mocha</h3>
+          <p class="fg:#0a5 font-weight:600 m:0">R$ 15,00</p>
+        </div>
+      </div>
+    </section>
   </main>
-  <!-- Footer -->
+
+  <!-- > Footer -->
   <footer>
     <div
       class="bg:primary p:1rem|2rem grid place-items:center grid-template-cols:repeat(3,1fr) grid-template-cols:1fr@<sm gap:1rem ">
