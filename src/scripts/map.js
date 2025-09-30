@@ -160,18 +160,18 @@ const createLocationsPanel = () => {
             `).join('');
 
     panelContainer.innerHTML = `
-            <div class="flex gap:10px">
+            <div class="flex gap:10px ">
                 <img class="w:20px" src="src/assets/svgs/local-cafe.svg" alt="">
                 <h4 class="font-weight:500">Nossas Cafeterias</h4>
             </div>
-            <div class="flex flex-col jc:center ai:center opacity:60% p:1rem|0">
+            <div class="flex flex-col jc:center ai:center opacity:60% p:1rem">
                 <img class="w:48px m:0" src="src/assets/svgs/location.svg" alt="">
                 <p class="f:1rem m:0.25rem|0|0.5rem|0">Selecione um estado no mapa</p>
                 <p class="f:0.8rem m:0">para ver nossas unidades</p>
             </div>
             <div class="flex flex-col gap:0.5rem border-top:1px|solid|#e2e8f0 p-top:1rem">
-                <h4 class="font-weight:600 f:0.875rem color:#0f172a m:0">Estados com cafeterias:</h4>
-                <div class="flex flex-wrap gap:0.5rem">
+                <h4 class="font-weight:600 f:0.875rem color:#0f172a">Estados com cafeterias:</h4>
+                <div class="flex flex-wrap:wrap gap:0.5rem">
                     ${statesWithLocations}
                 </div>
             </div>
