@@ -34,6 +34,7 @@
   <script src="src/scripts/navTransform.js" defer></script>
   <script src="src/scripts/isLogged.js" defer></script>
   <script src="src/scripts/map.js" defer></script>
+  <script src="src/scripts/navResponsive.js" defer></script>
 </head>
 
 <body class="font-family:Lexend,sans-serif flex flex-col min-h:100vh scroll-behavior:smooth">
@@ -41,15 +42,21 @@
   <nav class="nav--initial nav-transitions fixed top:0 left:0 w:100% z-index:10">
     <div class="flex jc:space-between ai:center p:.25rem|2rem">
       <a href="/">
-        <svg class="nav-logo " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+        <svg class="nav-logo" viewBox="0 0 128 128">
           <path class="fill:primary"
             d="M14.03 185.166a.288.288 0 0 0-.33.33l1.404 8.658c.042.256-.282.402-.445.2l-1.343-1.668a.415.415 0 0 0-.735.2l-.345 2.376h-1.67c-.43 0-.703.46-.498.839l1.372 2.53-2.333 2.016a.341.341 0 0 0 .231.6l2.512-.059.947 5.054c-1.943 1.943-1.846 1.271-1.463 2.12l2.03 3.664c1.994.041 3.665.065 5.522.036 1.858.03 3.53.006 5.525-.036l2.029-3.664c.384-.849.48-.177-1.462-2.12l.947-5.054 2.51.06c.322.007.475-.39.232-.6l-2.333-2.016 1.373-2.531a.569.569 0 0 0-.5-.84h-1.669l-.345-2.375a.415.415 0 0 0-.735-.2l-1.343 1.668c-.162.202-.486.056-.445-.2l1.404-8.658c.046-.28-.301-.449-.494-.24l-1.661 1.801a.737.737 0 0 1-1.162-.1l-.132-.205c-.148-.23-.504-.123-.5.15l.118 6.842a.933.933 0 0 1-.937.95h-.838a.933.933 0 0 1-.937-.95l.117-6.842c.005-.273-.35-.38-.498-.15l-.132.204a.737.737 0 0 1-1.162.101l-1.662-1.801a.282.282 0 0 0-.165-.09zm1.27 18.326.331.015a.685.685 0 0 1 .62.464l.555 1.638a.402.402 0 0 1-.367.53l-.245.008a.376.376 0 0 1-.37-.258l-.311-.94h-.529l-.08.947a.32.32 0 0 1-.322.292l-.308-.004a.283.283 0 0 1-.266-.368l.576-1.823a.719.719 0 0 1 .716-.501zm7.174 0a.719.719 0 0 1 .717.501l.575 1.823a.283.283 0 0 1-.266.368l-.307.004a.32.32 0 0 1-.323-.292l-.08-.948h-.529l-.31.941a.376.376 0 0 1-.37.259l-.246-.009a.402.402 0 0 1-.367-.53l.556-1.638a.685.685 0 0 1 .62-.464z"
             style="opacity:1;fill-opacity:1;stroke:none;stroke-width:.929481;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
             transform="matrix(4.13671 0 0 4.13671 -14.13 -757.63)" />
         </svg>
       </a>
+
+      <!-- Hamburguer Menu (Mobile) -->
+      <svg class="open-nav w:36px h:36px fill:primary cursor:pointer display:none@>sm" viewBox="0 -960 960 960">
+        <path d="M120-240v-80h720v80zm0-200v-80h720v80zm0-200v-80h720v80z" />
+      </svg>
+
       <ul
-        class="nav-list-container nav-list flex align-items:center m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:inherit}_a">
+        class="nav-list-container nav-list flex align-items:center m:0 gap:10px list-style:none cursor:pointer {text-decoration:none;fg:inherit}_a display:none@<sm">
         <li>
           <a href="/">Início</a>
         </li>
@@ -68,10 +75,42 @@
       </ul>
     </div>
   </nav>
+
+  <!-- Side Bar (Mobile) -->
+  <nav class="nav-mobile fixed w:100% h:100vh bg:primary z:199 hidden display:none@>sm hidden">
+    <div class="flex flex-col p:1rem">
+      <div class="flex jc:end">
+        <svg class="close-nav fill:white w:36px h:36px cursor:pointer" viewBox="0 -960 960 960">
+          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224z" />
+        </svg>
+      </div>
+      <div class="flex flex-col w:100% jc:start">
+        <ul
+          class="nav-list-container nav-list flex flex-col m:0 gap:20px list-style:none cursor:pointer {text-decoration:none;fg:white}_a {fg:white}_li">
+          <li>
+            <a href="/">Início</a>
+          </li>
+          <li>
+            <a href="/grupo/">Grupo</a>
+          </li>
+          <li class="nav-login display:block display:none.is-user">
+            <a href="/entrar/">Entrar</a>
+          </li>
+          <li class="nav-signup display:block display:none.is-user">
+            <a href="/cadastrar/">Cadastrar</a>
+          </li>
+          <li class="nav-logout display:none display:block.is-user">
+            Sair
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <!-- > Header Parallax -->
-  <header
-    class="parallax parallax-gradient rel flex jc:center ai:center height:100vh mb:10rem {mb:8rem;height:80vh}@<lg {mb:6rem;height:65vh}@<md {mb:4rem;height:60vh}@<sm 
-    {mb:2rem;height:80vh}@<xs {mb:1rem;height:80vh}@<2xs {mb:1rem;height:60vh}@<3xs {.5rem;height:50vh}@<4xs overflow:hidden z-index:-2">
+  <header class=" parallax parallax-gradient rel flex jc:center ai:center height:100vh mb:10rem {mb:8rem;height:80vh}@<lg
+        {mb:6rem;height:65vh}@<md {mb:4rem;height:60vh}@<sm {mb:2rem;height:80vh}@<xs {mb:1rem;height:80vh}@<2xs
+        {mb:1rem;height:60vh}@<3xs {.5rem;height:50vh}@<4xs overflow:hidden z-index:-2">
     <picture>
       <source media="(max-width: 768px)" srcset="src/assets/images/parallax/bg-mobile.png">
       <img src="src/assets/images/parallax/bg.png" data-speed="0.4" alt="Plano de fundo da cidade">
@@ -94,12 +133,13 @@
       <img src="src/assets/images/parallax/grass-2.png" data-speed="0.2" alt="Vegetação frontal">
     </picture>
   </header>
+
   <!-- > Main Container -->
   <main class="bg:white rel flex flex-col jc:center ai:center flex-grow:1">
 
-    <section class="flex flex-col ai:center gap:.5rem mb:8rem mb:4rem@<sm">
-      <h2 class="m:0 f:2rem">Nossos Produtos</h2>
-      <p class="m:0 opacity:70%">Do jeitinho que voce gosta</p>
+    <section class="flex flex-col ai:center gap:.5rem mb:10rem mb:5rem@<2xs">
+      <h2 class="m:0 f:2rem f:1.75rem@<3xs">Nossos Produtos</h2>
+      <p class="m:0 opacity:70% f:1rem f:0.9rem@<3xs">Do jeitinho que voce gosta</p>
     </section>
 
     <!-- Card Container (Desktop) -->
@@ -114,7 +154,7 @@
         </div>
         <div class="flex flex-col">
           <p class="fg:white">R$ 15,00</p>
-          <a class="btn" href="/cafes/latte/">Adicionar ao carrinho</a>
+          <a class="btn" href="/cafes/latte/">Ver mais</a>
         </div>
       </div>
 
@@ -128,7 +168,7 @@
         </div>
         <div class="flex flex-col">
           <p class="fg:white">R$ 15,00</p>
-          <a class="btn" href="">Adicionar ao carrinho</a>
+          <a class="btn" href="">Ver mais</a>
         </div>
       </div>
 
@@ -142,7 +182,7 @@
         </div>
         <div class="flex flex-col">
           <p class="fg:white">R$ 15,00</p>
-          <a class="btn" href="">Adicionar ao carrinho</a>
+          <a class="btn" href="">Ver mais</a>
         </div>
       </div>
     </section>
@@ -196,58 +236,74 @@
     </section>
 
     <!-- > Choose Us Section -->
-    <section class="w:100% flex flex-col ai:center bg:primary mb:2rem">
-      <div class="flex flex-col gap:2rem w:80% p:2rem">
+    <section class="w:100% flex flex-col ai:center bg:primary mb:2rem hidden-el">
+      <div class="flex flex-col gap:2rem w:80% m:2rem my:4xl">
         <header class="flex flex-col ai:center gap:.5rem">
-          <h2 class="m:0 f:2rem fg:white">Por que escolher a Zhu Coffee?</h2>
-          <p class="m:0 opacity:100% fg:white">Mais do que café, uma experiência única.</p>
+          <h2 class="m:0 f:2rem f:1.75rem@<3xs fg:white text-align:center">Por que escolher a Zhu Coffee?</h2>
+          <p class="m:0 opacity:100% fg:white f:1rem f:0.9rem@<3xs text-align:center">Mais do que café, uma
+            experiência
+            única.</p>
         </header>
 
         <div
-          class="grid grid-template-cols:repeat(4,1fr) gap:2rem {grid-template-cols:1fr|1fr}@<md {grid-template-cols:1fr}@<sm w:100% mb:2rem">
-          <div class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem">
+          class="grid grid-template-cols:repeat(4,1fr) gap:2rem {grid-template-cols:1fr|1fr}@<md {grid-template-cols:1fr}@<sm w:100% mb:2rem place-items:center@<4xs">
+          <div
+            class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem w:100px@<4xs">
             <span class="f:2rem">☕</span>
-            <h3 class="m:0 f:1.25rem">Qualidade premium</h3>
-            <p class="m:0 opacity:70%">Grãos selecionados e torrados artesanalmente.</p>
+            <h3 class="m:0 f:1.25rem f:1rem@<4xs text-align:center">Qualidade premium</h3>
+            <p class="m:0 opacity:70% f:1rem f:0.75rem@<4xs text-align:center">Grãos selecionados e torrados
+              artesanalmente.</p>
           </div>
 
-          <div class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem">
+          <div
+            class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem w:100px@<4xs">
             <span class="f:2rem">🌍</span>
-            <h3 class="m:0 f:1.25rem">Sustentabilidade</h3>
-            <p class="m:0 opacity:70%">Compromisso com o meio ambiente e produção responsável.</p>
+            <h3 class="m:0 f:1.25rem f:1rem@<4xs text-align:center">Sustentabilidade</h3>
+            <p class="m:0 opacity:70% f:1rem f:0.75rem@<4xs text-align:center">Compromisso com o meio ambiente e
+              produção responsável.</p>
           </div>
 
-          <div class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem">
+          <div
+            class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem w:100px@<4xs">
             <span class="f:2rem">❤️</span>
-            <h3 class="m:0 f:1.25rem">Atendimento acolhedor</h3>
-            <p class="m:0 opacity:70%">Cada cliente é parte da nossa família.</p>
+            <h3 class="m:0 f:1.25rem f:1rem@<4xs text-align:center">Atendimento acolhedor</h3>
+            <p class="m:0 opacity:70% f:1rem f:0.75rem@<4xs text-align:center">Cada cliente é parte da nossa
+              família.
+            </p>
           </div>
 
-          <div class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem">
+          <div
+            class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem w:100px@<4xs">
             <span class="f:2rem">🚀</span>
-            <h3 class="m:0 f:1.25rem">Inovação</h3>
-            <p class="m:0 opacity:70%">Novos sabores e experiências modernas.</p>
+            <h3 class="m:0 f:1.25rem f:1rem@<4xs text-align:center">Inovação</h3>
+            <p class="m:0 opacity:70% f:1rem f:0.75rem@<4xs text-align:center">Novos sabores e experiências
+              modernas.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- > Find Us Section -->
-    <section class="flex flex-col ai:center gap:.5rem mb:2.25rem">
-      <h2 class="m:0 f:2rem">Onde nos encontrar?</h2>
-      <p class="m:0 opacity:70%">Estamos em grande parte do Brasil</p>
+    <section class=" gap:1.5rem mb:4rem hidden-el">
+
+      <header class="flex flex-col ai:center gap:.5rem">
+        <h2 class="m:0 f:2rem f:1.75rem@<3xs text-align:center">Onde nos encontrar?</h2>
+        <p class="m:0 opacity:70% f:1rem f:0.9rem@<3xs">Estamos em grande parte do Brasil</p>
+      </header>
+
     </section>
 
-    <section
-      class="grid grid-template-cols:2fr|1fr gap:20px w:60% mb:4rem  {grid-template-cols:1fr;w:90%}@<sm w:80%@<lg hidden-el">
-      <!-- > Brazil MAP -->
+    <section class="grid grid-template-cols:2fr|1fr gap:20px w:60% {grid-template-cols:1fr;w:90%}@<sm w:80%@<lg  mb:4rem ">
+      <!-- Brazil MAP -->
       <div class="box-shadow:layered-shadow r:0.5rem">
         <svg class="stroke:#fff r:0.5rem w:100% h:auto" viewBox="0 0 700 600" id="brazil-map"></svg>
       </div>
 
       <!-- Side Card -->
-      <div id="info" class="bg:white gap:1rem r:0.5rem"> </div>
+      <div id="info" class="bg:white gap:1rem r:0.5rem"></div>
     </section>
+
   </main>
   <!-- Footer -->
   <footer>
@@ -284,7 +340,6 @@
           <img src="src/assets/svgs/arrow-up.svg" class="accordion-icon" />
         </div>
         <ul class="accordion-content accordion-collapsed list">
-          <li><a href="#/">Instagram</a></li>
           <li><a href="https://github.com/trobukan/zhu-coffe">Github</a></li>
         </ul>
       </div>
