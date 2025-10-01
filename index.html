@@ -97,9 +97,9 @@
   <!-- > Main Container -->
   <main class="bg:white rel flex flex-col jc:center ai:center flex-grow:1">
 
-    <section class="flex flex-col ai:center gap:.5rem mb:8rem mb:4rem@<sm">
-      <h2 class="m:0 f:2rem f:1.75 rem@<sm">Nossos Produtos</h2>
-      <p class="m:0 opacity:70%">Do jeitinho que voce gosta</p>
+    <section class="flex flex-col ai:center gap:.5rem mb:10rem mb:5rem@<2xs">
+      <h2 class="m:0 f:2rem f:1.75rem@<3xs">Nossos Produtos</h2>
+      <p class="m:0 opacity:70% f:1rem f:0.9rem@<3xs">Do jeitinho que voce gosta</p>
     </section>
 
     <!-- Card Container (Desktop) -->
@@ -196,58 +196,72 @@
     </section>
 
     <!-- > Choose Us Section -->
-    <section class="w:100% flex flex-col ai:center bg:primary mb:2rem">
+    <section class="w:100% flex flex-col ai:center bg:primary mb:2rem hidden-el">
       <div class="flex flex-col gap:2rem w:80% m:2rem">
         <header class="flex flex-col ai:center gap:.5rem">
-          <h2 class="m:0 f:2rem fg:white">Por que escolher a Zhu Coffee?</h2>
-          <p class="m:0 opacity:100% fg:white">Mais do que café, uma experiência única.</p>
+          <h2 class="m:0 f:2rem f:1.75rem@<3xs fg:white text-align:center">Por que escolher a Zhu Coffee?</h2>
+          <p class="m:0 opacity:100% fg:white f:1rem f:0.9rem@<3xs text-align:center">Mais do que café, uma experiência
+            única.</p>
         </header>
 
         <div
           class="grid grid-template-cols:repeat(4,1fr) gap:2rem {grid-template-cols:1fr|1fr}@<md {grid-template-cols:1fr}@<sm w:100% mb:2rem place-items:center@<4xs">
-          <div class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem w:100px@<4xs">
+          <div
+            class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem w:100px@<4xs">
             <span class="f:2rem">☕</span>
-            <h3 class="m:0 f:1.25rem">Qualidade premium</h3>
-            <p class="m:0 opacity:70%">Grãos selecionados e torrados artesanalmente.</p>
+            <h3 class="m:0 f:1.25rem f:1rem@<4xs text-align:center">Qualidade premium</h3>
+            <p class="m:0 opacity:70% f:1rem f:0.75rem@<4xs text-align:center">Grãos selecionados e torrados
+              artesanalmente.</p>
           </div>
 
-          <div class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem w:100px@<4xs">
+          <div
+            class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem w:100px@<4xs">
             <span class="f:2rem">🌍</span>
-            <h3 class="m:0 f:1.25rem">Sustentabilidade</h3>
-            <p class="m:0 opacity:70%">Compromisso com o meio ambiente e produção responsável.</p>
+            <h3 class="m:0 f:1.25rem f:1rem@<4xs text-align:center">Sustentabilidade</h3>
+            <p class="m:0 opacity:70% f:1rem f:0.75rem@<4xs text-align:center">Compromisso com o meio ambiente e
+              produção responsável.</p>
           </div>
 
-          <div class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem w:100px@<4xs">
+          <div
+            class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem w:100px@<4xs">
             <span class="f:2rem">❤️</span>
-            <h3 class="m:0 f:1.25rem">Atendimento acolhedor</h3>
-            <p class="m:0 opacity:70%">Cada cliente é parte da nossa família.</p>
+            <h3 class="m:0 f:1.25rem f:1rem@<4xs text-align:center">Atendimento acolhedor</h3>
+            <p class="m:0 opacity:70% f:1rem f:0.75rem@<4xs text-align:center">Cada cliente é parte da nossa família.
+            </p>
           </div>
 
-          <div class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem w:100px@<4xs">
+          <div
+            class="flex flex-col ai:center gap:.5rem p:1.5rem bg:white box-shadow:layered-shadow r:1rem w:100px@<4xs">
             <span class="f:2rem">🚀</span>
-            <h3 class="m:0 f:1.25rem">Inovação</h3>
-            <p class="m:0 opacity:70%">Novos sabores e experiências modernas.</p>
+            <h3 class="m:0 f:1.25rem f:1rem@<4xs text-align:center">Inovação</h3>
+            <p class="m:0 opacity:70% f:1rem f:0.75rem@<4xs text-align:center">Novos sabores e experiências modernas.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- > Find Us Section -->
-    <section class="flex flex-col ai:center gap:.5rem mb:2.25rem">
-      <h2 class="m:0 f:2rem">Onde nos encontrar?</h2>
-      <p class="m:0 opacity:70%">Estamos em grande parte do Brasil</p>
-    </section>
+    <section class="flex flex-col ai:center gap:1.5rem mb:4rem hidden-el">
 
-    <section
-      class="grid grid-template-cols:2fr|1fr gap:20px w:60% mb:4rem  {grid-template-cols:1fr;w:90%}@<sm w:80%@<lg hidden-el">
-      <!-- > Brazil MAP -->
-      <div class="box-shadow:layered-shadow r:0.5rem">
-        <svg class="stroke:#fff r:0.5rem w:100% h:auto" viewBox="0 0 700 600" id="brazil-map"></svg>
+      <header class="flex flex-col ai:center gap:.5rem">
+        <h2 class="m:0 f:2rem f:1.75rem@<3xs text-align:center">Onde nos encontrar?</h2>
+        <p class="m:0 opacity:70% f:1rem f:0.9rem@<3xs">Estamos em grande parte do Brasil</p>
+      </header>
+
+      <div class="grid grid-template-cols:2fr|1fr gap:20px w:60% {grid-template-cols:1fr;w:90%}@<sm w:80%@<lg">
+
+        <!-- Brazil MAP -->
+        <div class="box-shadow:layered-shadow r:0.5rem">
+          <svg class="stroke:#fff r:0.5rem w:100% h:auto" viewBox="0 0 700 600" id="brazil-map"></svg>
+        </div>
+
+        <!-- Side Card -->
+        <div id="info" class="bg:white gap:1rem r:0.5rem"></div>
       </div>
-
-      <!-- Side Card -->
-      <div id="info" class="bg:white gap:1rem r:0.5rem"> </div>
     </section>
+
+
   </main>
   <!-- Footer -->
   <footer>
