@@ -11,5 +11,3 @@ document.querySelectorAll('.accordion').forEach((acc) => {
     icon.style.transform = isCollapsed ? 'rotate(180deg)' : 'rotate(0deg)';
   });
 });
-
-

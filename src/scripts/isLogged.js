@@ -1,29 +1,34 @@
 const isLogged = window.localStorage.getItem("isLogged");
 
-const lists = [
-  document.querySelector(".nav-signup"),
-  document.querySelector(".nav-login"),
-  document.querySelector(".nav-logout")
-]
+const navSignup = document.querySelectorAll(".nav-signup");
+const navLogin = document.querySelectorAll(".nav-login");
+const navLogout = document.querySelectorAll(".nav-logout");
+
+const visibilityLists = [navSignup, navLogin, navLogout];
+
+const toggleIsUserClass = (method) => {
+  visibilityLists.forEach(list => {
+    list.forEach(item => {
+      item.classList[method]("is-user");
+    });
+  });
+};
 
 if (isLogged) {
-  lists.forEach(list => list?.classList.add("is-user"));
+  toggleIsUserClass("add");
 
-  /** Restringir o acesso do usuário caso tente entrar no /login e /signup enquanto estar logado */
   const currentPath = window.location.pathname.replace(/\/$/, "");
-  const restrictedPaths = ["/login", "/signup"];
+  const restrictedPaths = ["/entrar", "/cadastrar"];
   if (restrictedPaths.includes(currentPath)) {
     window.location.href = "/";
   }
 } else {
-  lists.forEach(list => list?.classList.remove("is-user"));
+  toggleIsUserClass("remove");
 }
 
-/**@type {HTMLLIElement} */
-const navLogout = document.querySelector(".nav-logout");
-
-navLogout?.addEventListener(("click"), () => {
-  localStorage.removeItem("isLogged")
-  window.location.href = "/";
-})
-
+navLogout.forEach(item => {
+  item.addEventListener("click", () => {
+    localStorage.removeItem("isLogged");
+    window.location.href = "/";
+  });
+});
