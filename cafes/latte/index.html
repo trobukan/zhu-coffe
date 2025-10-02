@@ -16,23 +16,26 @@
   <script src="src/styles/global/master.css.js"></script> <!-- CONFIG -->
   <script src="https://cdn.master.co/css-runtime@rc"></script> <!-- CDN -->
 
-  <!-- > Swiper Library -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> <!-- CSS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script> <!-- CDN -->
-  <script type="module" src="src/scripts/swiper.js"></script> <!-- CONFIG -->
-
   <!-- > CSS  -->
   <link rel="stylesheet" href="src/styles/index.css" />
+
   <!-- > Fonts/Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+
   <!-- > Favicon -->
   <link rel="icon" href="src/assets/favicon/logo.svg" />
+
+  <!-- Components -->
+  <script src="/src/components/Footer.js" defer></script>
+  <script src="/src/components/Nav.js"></script>
+
   <!-- > JS -->
   <script src="src/scripts/footerAccordion.js" defer></script>
   <script src="src/scripts/hiddenScrollElements.js" defer></script>
   <script src="src/scripts/isLogged.js" defer></script>
+  <script src="src/scripts/navTransform.js" defer></script>
 </head>
 
 <body class="font-family:Lexend,sans-serif flex flex-col min-h:100vh scroll-behavior:smooth">
@@ -85,10 +88,12 @@
         <p class="font:1.25rem font-weight:600 fg:#0a5">R$ 15,00</p>
 
         <p class="line-height:1.6 opacity:80% font:md">
-          Um Latte clássico, a harmonia perfeita entre café e leite vaporizado, com uma finalização fina de espuma de leite.
+          Um Latte clássico, a harmonia perfeita entre café e leite vaporizado, com uma finalização fina de espuma de
+          leite.
         </p>
         <p class="line-height:1.6 opacity:80% font:md">
-          Uma bebida cremosa e reconfortante que oferece o equilibrio entre: calor e energia do café, com a doçura e maciez do leite.
+          Uma bebida cremosa e reconfortante que oferece o equilibrio entre: calor e energia do café, com a doçura e
+          maciez do leite.
         </p>
 
         <!-- Purchase Controls -->
@@ -105,13 +110,15 @@
       <h2 class="font:2rem font-weight:700 mb:1rem">Outros cafes</h2>
       <div class="grid grid-cols:2  gap:2rem">
         <div class="p:1.5rem b:1px_solid_#eee r:0.5rem flex flex-col ai:center">
-          <a href="/cafes/mocha/"><img src="/src/assets/svgs/coffe.svg" alt="Cappuccino" class="w:140px w:100@<sm" /></a>
+          <a href="/cafes/mocha/"><img src="/src/assets/svgs/coffe.svg" alt="Cappuccino"
+              class="w:140px w:100@<sm" /></a>
           <h3 class="font:1.25rem font-weight:600">Mocha</h3>
           <p class="fg:#0a5 font-weight:600 m:0">R$ 15,00</p>
         </div>
 
         <div class="p:1.5rem b:1px_solid_#eee r:0.5rem flex flex-col ai:center">
-          <a href="/cafes/cappuccino/"><img src="/src/assets/svgs/coffe.svg" alt="Mocha" class="w:140px w:100px@<sm" /></a>
+          <a href="/cafes/cappuccino/"><img src="/src/assets/svgs/coffe.svg" alt="Mocha"
+              class="w:140px w:100px@<sm" /></a>
           <h3 class="font:1.25rem font-weight:600">Cappuccino</h3>
           <p class="fg:#0a5 font-weight:600 m:0">R$ 15,00</p>
         </div>

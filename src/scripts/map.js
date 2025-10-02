@@ -154,7 +154,7 @@ const createLocationsPanel = () => {
     const statesWithLocations = Object.entries(brazilStates)
       .filter(([code]) => hasLocations(code))
       .map(([code, state]) => `
-                <span data-state-code="${code}" class="badge-link flex ai:center border:1px|solid|#e2e8f0 r:0.375rem p:0.25rem|0.5rem f:0.875rem font-weight:500 color:#0f172a cursor:pointer transition:all|0.15s bg:#f0fdf4:hover border:#a7f3d0:hover">
+                <span data-state-code="${code}" class="badge-link flex ai:center border:1px|solid|#e2e8f0 r:0.375rem p:0.25rem|0.5rem f:0.85rem font-weight:500 color:#0f172a cursor:pointer transition:all|0.15s bg:#f0fdf4:hover border:#a7f3d0:hover">
                     ${state.name}
                 </span>
             `).join('');
@@ -170,7 +170,7 @@ const createLocationsPanel = () => {
                 <p class="f:0.8rem m:0">para ver nossas unidades</p>
             </div>
             <div class="flex flex-col gap:0.5rem border-top:1px|solid|#e2e8f0 p-top:1rem">
-                <h4 class="font-weight:600 f:0.875rem color:#0f172a">Estados com cafeterias:</h4>
+                <h4 class="font-weight:600 f:0.85rem color:#0f172a">Estados com cafeterias:</h4>
                 <div class="flex flex-wrap:wrap gap:0.5rem">
                     ${statesWithLocations}
                 </div>

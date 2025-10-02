@@ -1,8 +1,8 @@
 /** > Footer accordion (<@sm only) */
 document.querySelectorAll('.accordion').forEach((acc) => {
-  const header = acc.querySelector('.accordion-header')
-  const content = acc.querySelector('.accordion-content');
-  const icon = acc.querySelector('.accordion-icon');
+  const header = acc?.querySelector('.accordion-header')
+  const content = acc?.querySelector('.accordion-content');
+  const icon = acc?.querySelector('.accordion-icon');
 
   header.addEventListener('click', () => {
     const isCollapsed = content.classList.contains('accordion-collapsed');
