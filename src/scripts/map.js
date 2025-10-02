@@ -68,11 +68,11 @@ let selectedState = null;
 const svg = document.getElementById('brazil-map');
 const info = document.getElementById("info");
 
-const COLORS = {
+const COLORS = Object.freeze({
   UNITS: '#059669',
   SELECTED: '#dc2626',
   NO_UNITS: '#6b7280'
-};
+});
 
 const getStateLocations = (stateCode) => cafes.filter(cafe => cafe.state === stateCode);
 const hasLocations = (stateCode) => getStateLocations(stateCode).length > 0;
