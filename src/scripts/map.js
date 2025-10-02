@@ -61,6 +61,7 @@ const cafes = [
   { id: 4, name: 'Cafeteria', city: 'Porto Alegre', state: 'RS', address: 'Rua , 321', phone: '(51) ****-****', hours: '7:30 - 20:00' },
   { id: 5, name: 'Cafeteria', city: 'Salvador', state: 'BA', address: 'Av., 654', phone: '(71) ****-****', hours: '8:00 - 22:00' },
   { id: 6, name: 'Cafeteria', city: 'São Paulo', state: 'SP', address: 'Rua, 123', phone: '(11) ****-****', hours: '7:00 - 22:00' },
+  { id: 7, name: 'Cafeteria', city: 'São Luis', state: 'MA', address: 'Rua, 802', phone: '(98) ****-****', hours: '7:00 - 22:00' },
 ];
 
 let selectedState = null;
