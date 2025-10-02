@@ -1,4 +1,3 @@
-
 window.masterCSSConfig = {
   variables: {
     /** > Colors */
@@ -13,9 +12,15 @@ window.masterCSSConfig = {
     0 16px 16px hsl(0deg 0% 0% / 0.075)`
   },
   components: {
+
+    /** > Product */
+    "product__title": "f:2rem mb:0.5rem font-weight:700 f:1.25rem@<sm",
+    "product__price": "font:1.25rem font-weight:600 fg:#0a5 f:1rem@<sm",
+    "product__desc": "line-height:1.6 opacity:80% font:md f:0.85rem@<sm",
+    "product__image": "w:280px w:170px@<sm w:100px@<xs",
+
     /** > Card Group */
-    "card-group":
-    "flex ai:center gap:1.5rem p:1rem border:1px|solid|#ddd r:1rem width:60% min-w:180px",
+    "card-group": "flex ai:center gap:1.5rem p:1rem border:1px|solid|#ddd r:1rem width:60% min-w:180px",
     "card-group__title": "m:0 f:1.25rem f:1rem@<sm",
     "card-group__text": "m:0 f:1rem f:0.75rem@<xs opacity:70%",
     "card-group__image": "w:100px r:50% w:50px@<xs",
