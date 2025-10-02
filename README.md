@@ -1,10 +1,23 @@
-# Project : Zhu Coffe
+# Projeto Final SENAI: Site Zhu Coffee
 
-This is the official repository for **zhu coffe**, a web development create as part of the
-**SENAI** on **Front-End Programmer**.
+Este é o site desenvolvido para a cafeteria fictícia **Zhu Coffee**, criado como Projeto Final para o Front-end Programmer SENAI.
 
-This project demonstrates the core skills and concepts learned.
+## Guia Rápido para os Requisitos
 
-### Technologies used:
+Esta tabela mapeia a localização exata de cada requisito no código para facilitar a revisão.
 
-WIP...
+| Requisito | Status | Localização no Código | Detalhes da Implementação |
+| :--- | :--- | :--- | :--- |
+| **1. Tecnologia (HTML/CSS/JS/Framework)** | ✅ | | Framework: **MasterCSS**. |
+| **2. Mínimo de 3 Páginas** | ✅ 
+| **3. Carrossel Informativo** | ✅ | `index.html` | Usa **Swiper.js**. Aparece apenas no layout mobile, na seção de produtos. |
+| **4. Organização Semântica** | ✅ |
+| **5. Formulário (Login/Cadastro)** | ✅ | `/entrar/`, `/cadastar/` | Validação em `src/scripts/signup.js`. |
+| **6. Página de Integrantes** | ✅ | `/grupo/` | Fotos em formato **avatar** com informações ao lado. |
+| **7. Responsividade / Imagens Condicionais** | ✅ | `index.html` (Header) | Implementação de `<picture>` e `<source>` para carregamento condicional de imagens (mobile/desktop). |
+| **8. Pseudo-classe e Pseudo-elemento** | ✅ | `/entrar/`, `/cadastar/`, `/src/scripts/map.js` | **Pseudo-elemento:** `::placeholder` nos campos de input. **Pseudo-classe:** `:hover` para interatividade no mapa SVG. |
+
+## Como Executar o Projeto
+
+1.  Clone este repositório.
+2.  Abra o arquivo **`index.html`** diretamente no seu navegador.

@@ -1,11 +1,3 @@
-/**
-* ⚠️ Atenção
-*
-* Para uma melhor vizualização no código, estou usando uma extensão chamada Inline Html, assim você consegue ver
-* facilmente a sintáxe.
-*
-*/
-
 class FooterComponent extends HTMLElement {
     constructor() {
         super()
