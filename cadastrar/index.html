@@ -49,16 +49,23 @@
     <div class="bg:white p:2rem r:1rem w:90% max-w:400px box-shadow:layered-shadow">
       <h2 class="text-align:center fg:primary mb:1rem">Cadastrar-se</h2>
       <form method="post" action="." class="flex flex-col gap:1rem">
+        <div class="error-message hidden fg:white f:0.75rem mb:1rem b:1px|solid|red p:0.75rem r:0.25rem bg:#d03c38">
+        </div>
+
         <label for="email">E-mail</label>
-        <input type="email" name="email" required class="p:.75rem r:.5rem b:1px|solid|#ccc">
+        <input type="email" name="email" placeholder="nome@dominio.com" required
+          class="p:.75rem r:.5rem b:1px|solid|#ccc opacity:80%::placeholder">
 
         <label for="password">Senha</label>
-        <input type="password" name="password" required class="p:.75rem r:.5rem b:1px|solid|#ccc">
+        <input type="password" name="password" placeholder="Mínimo 4 caracteres" required
+          class="p:.75rem r:.5rem b:1px|solid|#ccc opacity:80%::placeholder">
 
         <label for="confirm-password">Confirmar senha</label>
-        <input type="password" name="confirm-password" required class="p:.75rem r:.5rem b:1px|solid|#ccc">
+        <input type="password" name="confirm-password" placeholder="Mínimo 4 caracteres" required
+          class="p:.75rem r:.5rem b:1px|solid|#ccc opacity:80%::placeholder">
 
-        <button type="submit" class="btn mt:1rem">Cadastrar</button>
+        <button type="submit"
+          class="bg:primary fg:white p:1rem|2rem font-weight:600 r:0.25rem border:none mt:1rem">Cadastrar</button>
       </form>
       <p class="text-align:center mt:1rem f:.9rem ">
         Ja possui uma conta?
