@@ -61,6 +61,7 @@ const cafes = [
   { id: 4, name: 'Cafeteria', city: 'Porto Alegre', state: 'RS', address: 'Rua , 321', phone: '(51) ****-****', hours: '7:30 - 20:00' },
   { id: 5, name: 'Cafeteria', city: 'Salvador', state: 'BA', address: 'Av., 654', phone: '(71) ****-****', hours: '8:00 - 22:00' },
   { id: 6, name: 'Cafeteria', city: 'São Paulo', state: 'SP', address: 'Rua, 123', phone: '(11) ****-****', hours: '7:00 - 22:00' },
+  { id: 7, name: 'Cafeteria', city: 'São Luis', state: 'MA', address: 'Rua, 802', phone: '(98) ****-****', hours: '7:00 - 22:00' },
 ];
 
 let selectedState = null;
@@ -68,11 +69,11 @@ let selectedState = null;
 const svg = document.getElementById('brazil-map');
 const info = document.getElementById("info");
 
-const COLORS = {
+const COLORS = Object.freeze({
   UNITS: '#059669',
   SELECTED: '#dc2626',
   NO_UNITS: '#6b7280'
-};
+});
 
 const getStateLocations = (stateCode) => cafes.filter(cafe => cafe.state === stateCode);
 const hasLocations = (stateCode) => getStateLocations(stateCode).length > 0;
@@ -154,7 +155,7 @@ const createLocationsPanel = () => {
     const statesWithLocations = Object.entries(brazilStates)
       .filter(([code]) => hasLocations(code))
       .map(([code, state]) => `
-                <span data-state-code="${code}" class="badge-link flex ai:center border:1px|solid|#e2e8f0 r:0.375rem p:0.25rem|0.5rem f:0.875rem font-weight:500 color:#0f172a cursor:pointer transition:all|0.15s bg:#f0fdf4:hover border:#a7f3d0:hover">
+                <span data-state-code="${code}" class="badge-link flex ai:center border:1px|solid|#e2e8f0 r:0.375rem p:0.25rem|0.5rem f:0.85rem font-weight:500 color:#0f172a cursor:pointer transition:all|0.15s bg:#f0fdf4:hover border:#a7f3d0:hover">
                     ${state.name}
                 </span>
             `).join('');
@@ -170,7 +171,7 @@ const createLocationsPanel = () => {
                 <p class="f:0.8rem m:0">para ver nossas unidades</p>
             </div>
             <div class="flex flex-col gap:0.5rem border-top:1px|solid|#e2e8f0 p-top:1rem">
-                <h4 class="font-weight:600 f:0.875rem color:#0f172a">Estados com cafeterias:</h4>
+                <h4 class="font-weight:600 f:0.85rem color:#0f172a">Estados com cafeterias:</h4>
                 <div class="flex flex-wrap:wrap gap:0.5rem">
                     ${statesWithLocations}
                 </div>

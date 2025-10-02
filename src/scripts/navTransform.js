@@ -1,26 +1,43 @@
-const navContainer = document.querySelector("nav");
-const headerContainer = document.querySelector("header");
+const initNavScrollLogic = () => {
+  const navComponent = document.querySelector("app-nav");
+  const headerContainer = document.querySelector("header");
 
-let lastScroll = 0;
+  const navContainer = navComponent?.querySelector("nav");
+  const homePath = "/";
 
-window.addEventListener("scroll", () => {
-  const headerHeight = headerContainer.offsetHeight;
-  const scrollPosition = window.scrollY;
+  const isHomePage = window.location.pathname === homePath || window.location.pathname.endsWith('/index.html');
+  const headerHeight = headerContainer?.offsetHeight;
 
-  if (scrollPosition >= headerHeight) {
-    navContainer.classList.add("nav--complete");
+  if (!isHomePage) {
     navContainer.classList.remove("nav--initial");
-  } else {
-    navContainer.classList.remove("nav--complete");
-    navContainer.classList.add("nav--initial");
-  }
-  if (scrollPosition > lastScroll && scrollPosition) {
-    navContainer.classList.add("nav--hidden");
-  } else {
+    navContainer.classList.add("nav--complete");
     navContainer.classList.remove("nav--hidden");
+    return;
   }
 
-  lastScroll = scrollPosition;
-});
+  let lastScroll = 0;
 
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+
+    const isPastHeader = scrollPosition >= headerHeight;
+
+    navContainer.classList.toggle("nav--complete", isPastHeader);
+    navContainer.classList.toggle("nav--initial", !isPastHeader);
+
+    const isScrollingDown = scrollPosition > lastScroll && scrollPosition > headerHeight;
+    navContainer.classList.toggle("nav--hidden", isScrollingDown);
+
+    lastScroll = scrollPosition;
+  };
+
+  handleScroll();
+  window.addEventListener("scroll", handleScroll);
+};
+
+if (customElements.get('app-nav')) {
+  initNavScrollLogic();
+} else {
+  customElements.whenDefined('app-nav').then(initNavScrollLogic);
+}
 
